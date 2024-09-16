@@ -434,7 +434,6 @@ export default function Home() {
                           alt="electronjs"
                           width={120}
                           height={60}
-                          className="w-auto h-auto"
                         />
                       </li>
                       <li className="flex flex-row items-center gap-x-2 mb-1 before:content-[''] before:block before:relative before:w-[40px] before:h-[40px] before:bg-center before:bg-contain before:bg-no-repeat before:bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/800px-Laravel.svg.png')]">
