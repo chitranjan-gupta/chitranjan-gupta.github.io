@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Bungee+Spice&family=Bungee+Tint&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  scroll-behavior: smooth;
+}
+
+.bungee-tint {
+  font-family: "Bungee Tint", sans-serif;
+}
+
+.bungee-shade {
+  font-family: "Bungee Shade", sans-serif;
+  color:blueviolet;
+}
+
+.bungee-spice {
+  font-family: "Bungee Spice", sans-serif;
+}
