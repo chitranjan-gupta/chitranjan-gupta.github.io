@@ -62,6 +62,7 @@ import x from "@/assets/images/x.png";
 import facebook from "@/assets/images/facebook.png";
 import whatsapplogo from "@/assets/images/whatsapp-logo.png";
 import telegramlogo from "@/assets/images/telegram-logo.png";
+import shikshasetuapp from "@/assets/images/shikshasetu-app.png";
 
 export {
   author,
@@ -128,4 +129,5 @@ export {
   facebook,
   whatsapplogo,
   telegramlogo,
+  shikshasetuapp
 };

@@ -11,6 +11,7 @@ import {
   papaplayer,
   patternlock,
   shikshasetu,
+  shikshasetuapp,
   websocket_chat,
   wrenchworks,
 } from "@/assets";
@@ -29,6 +30,35 @@ export default function Portfolio() {
           </h2>
         </div>
         <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-10">
+        <div
+            className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
+            id="0"
+          >
+            <div className="rounded-[10px] bg-[white] w-full h-full">
+              <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
+                <div className="relative w-full h-full rounded-[10px]">
+                  <Image
+                    fill
+                    alt="ShikshaSetu app"
+                    src={shikshasetuapp}
+                    className="w-full h-full object-fill rounded-[10px]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="-translate-y-10 w-full text-center text-2xl bungee-spice font-black">
+                  <Link
+                    href="https://github.com/chitranjan-gupta/lms-app"
+                    target="_blank"
+                    referrerPolicy="no-referrer"
+                    prefetch={false}
+                  >
+                    ShikshaSetu App
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
             id="1"
