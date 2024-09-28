@@ -1,6 +1,7 @@
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Anek_Devanagari } from "next/font/google";
-import "./globals.css";
+import Header from "@/components/header";
 
 const anek_devanagari = Anek_Devanagari({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
   description: "Chitranjan Gupta - Portfolio",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${anek_devanagari.className} bg-[cornsilk] overflow-x-hidden `}
+        className={`${anek_devanagari.className} bg-white dark:bg-[#1E1E1E] overflow-x-hidden `}
       >
+        <Header />
         {children}
       </body>
     </html>

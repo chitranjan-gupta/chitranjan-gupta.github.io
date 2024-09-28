@@ -15,7 +15,7 @@ const getBlogs = cache(async () => {
         const blogContent = await fs.readFile(filePath, "utf8");
         const { data, content } = matter(blogContent);
 
-        if (data.published === false) {
+        if (data.published === "false" || data.published === false) {
           return null;
         }
 
@@ -28,5 +28,5 @@ export default getBlogs;
 
 export async function getBlog(slug: string) {
   const blogs = await getBlogs();
-  return blogs.find((blog: any) => blog.slug === slug);
+  return blogs.find((blog: any) => blog !== null && blog.slug === slug);
 }

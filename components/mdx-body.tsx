@@ -9,7 +9,7 @@ import { MDXComponents } from "@/components/mdx-components";
 import { Pre, RawCode, highlight } from "codehike/code";
 
 async function Code({ codeblock }: { codeblock: RawCode }) {
-  const highlighted = await highlight(codeblock, "slack-ochin");
+  const highlighted = await highlight(codeblock, "github-from-css");
   return <Pre code={highlighted} style={highlighted.style} />;
 }
 

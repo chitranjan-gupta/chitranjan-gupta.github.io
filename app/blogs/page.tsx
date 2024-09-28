@@ -1,18 +1,11 @@
-import getBlogs from "@/lib/get-blogs";
-import Link from "next/link";
+"use server";
 
-export default async function BlogsPage() {
+import dynamic from "next/dynamic";
+import getBlogs from "@/lib/get-blogs";
+
+const Blogs = dynamic(() => import("@/components/blogs"));
+
+export default async function Page() {
   const blogs = await getBlogs();
-  return (
-    <div>
-      <ul>
-        {blogs &&
-          blogs.map((blog: any) => (
-            <li key={blog.slug}>
-              <Link href={`/blogs/${blog?.slug}`}>{blog?.slug}</Link>
-            </li>
-          ))}
-      </ul>
-    </div>
-  );
+  return <Blogs blogs={blogs} />;
 }
