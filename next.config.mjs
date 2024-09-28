@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "upload.wikimedia.org",
+        hostname: "komarev.com",
       },
     ],
   },
