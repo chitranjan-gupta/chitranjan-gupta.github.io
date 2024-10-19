@@ -13,6 +13,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.12",
+    "@next/third-parties": "^14.2.15",
     "@types/mdx": "^2.0.13",
     "codehike": "^1.0.1",
     "gray-matter": "^4.0.3",
