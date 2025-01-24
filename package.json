@@ -14,6 +14,7 @@
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.12",
     "@next/third-parties": "^14.2.15",
+    "@notionhq/client": "^2.2.15",
     "@types/mdx": "^2.0.13",
     "codehike": "^1.0.1",
     "gray-matter": "^4.0.3",
@@ -26,7 +27,8 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "remark-toc": "^9.0.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

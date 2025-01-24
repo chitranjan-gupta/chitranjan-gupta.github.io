@@ -30,10 +30,10 @@ export default function Layout({
       <body
         className={`${anek_devanagari.className} bg-white dark:bg-[#1E1E1E] overflow-x-hidden `}
       >
-        <GoogleTagManager gtmId={GOOGLE_TAG_MANAGER_ID} />
+        {process.env.NODE_ENV === "production" && <GoogleTagManager gtmId={GOOGLE_TAG_MANAGER_ID} />}
         <Header />
         {children}
-        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
+        {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />}
       </body>
     </html>
   );
