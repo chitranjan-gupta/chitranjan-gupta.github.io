@@ -41,7 +41,7 @@ export default function Header() {
           <span className="h-[30px] flex font-[900] flex-row justify-center items-center pt-2 text-[#333333] dark:text-[#E0E0E0] rounded-[5px]">
             Chitranjan Gupta
           </span>
-          <ColorButton className="ml-2"/>
+          <ColorButton className="ml-2" />
         </div>
         <div className="head-list flex flex-row justify-start md:justify-end mr-0 md:mr-[30px]">
           <ul className="nav-list flex flex-row flex-wrap list-none dark:text-[#E0E0E0]">
@@ -51,6 +51,12 @@ export default function Header() {
 
             <li className="mr-[10px]">
               <button onClick={() => handleClick("about", 100)}>About</button>
+            </li>
+
+            <li className="mr-[10px]">
+              <button onClick={() => handleClick("education", 100)}>
+                Education
+              </button>
             </li>
 
             <li className="mr-[10px]">

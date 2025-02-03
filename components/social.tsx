@@ -9,6 +9,7 @@ import {
   whatsapplogo,
   x,
   youtubelogo,
+  medium
 } from "@/assets";
 
 export default function Social() {
@@ -89,6 +90,20 @@ export default function Social() {
           width={30}
           height={30}
           alt="https://t.me/chitranjangupta"
+          className="w-auto h-auto"
+        />
+      </Link>
+      <Link
+        href="https://medium.com/@chitranjankumargupta"
+        target="_blank"
+        rel="noreferrer"
+        prefetch={false}
+      >
+        <Image
+          src={medium}
+          width={30}
+          height={30}
+          alt="https://medium.com/@chitranjankumargupta"
           className="w-auto h-auto"
         />
       </Link>

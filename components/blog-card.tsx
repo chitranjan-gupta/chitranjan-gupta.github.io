@@ -28,7 +28,7 @@ export default function BlogCard({ blog }: { blog: any }) {
           >
             {blog?.title}
           </span>
-          <p className="overflow-hidden h-24" title="Blog Description">
+          <p className="overflow-hidden w-full h-24 break-all" title="Blog Description">
             {blog?.description}
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function BlogCard({ blog }: { blog: any }) {
           <div className="w-[40px] h-[40px] rounded-full bg-white dark:bg-[#1E1E1E] translate-x-4"></div>
         </div>
         <div className="flex flex-row gap-x-2 p-8">
-          <QRCodeSVG value={`${SITE_URL}/blogs/${blog?.slug}`} className="w-[70px] h-[70px] bg-transparent" />
+          <QRCodeSVG value={`${SITE_URL}/blogs/${blog?.slug}`} className="w-[70px] h-[70px] bg-transparent dark:bg-white" />
           <div className="">
             <h6>Scan or</h6>
             <p>Show the QR-code when requested</p>

@@ -34,7 +34,7 @@ export default function Home() {
           <p>
             I value innovation and excellence in my work, and I&apos;m always
             eager to learn new technologies and approaches. <br />
-            Check out my portfolio section to see my projects.
+            Check out my portfolio section to see my projects and checkout my blogs.
           </p>
         </div>
         <div className="cta flex flex-row gap-[10px] mt-3">

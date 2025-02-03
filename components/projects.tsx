@@ -12,6 +12,29 @@ export default function Projects() {
           Projects
         </h2>
         <div className="prBox flex flex-col md:flex-row md:flex-wrap items-center justify-around mx-3">
+        <div className="cBox w-full h-[100px] md:w-[400px] md:h-[100px] shadow-md rounded-[5px] mb-[30px] flex flex-col justify-around p-2 bg-white dark:bg-[#E0E0E0]">
+            <div className="icon-box flex flex-row items-center justify-start">
+              <svg className="w-[20px] h-[20px]">
+                <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path>
+              </svg>
+              <Link
+                href="https://github.com/chitranjan-gupta/expo-react-native-devtools"
+                target="_blank"
+                prefetch={false}
+              >
+                <span className="text-xl">Expo React Native Devtools</span>
+              </Link>
+            </div>
+            <div className="sum-box pl-[5px]">
+              <p className="text-ellipsis text-sm">
+                Chrome Extension to Open React Native Devtools in Expo Projects through ngrok tunnel
+              </p>
+            </div>
+            <div className="lang-box flex flex-row justify-start items-center gap-x-2 pl-[5px]">
+              <span className="w-[10px] h-[10px] bg-yellow-300 rounded-full"></span>
+              <span className="">Javascript</span>
+            </div>
+          </div>
           <div className="cBox w-full h-[100px] md:w-[400px] md:h-[100px] shadow-md rounded-[5px] mb-[30px] flex flex-col justify-around p-2 bg-white dark:bg-[#E0E0E0]">
             <div className="icon-box flex flex-row items-center justify-start">
               <svg className="w-[20px] h-[20px]">
@@ -32,7 +55,7 @@ export default function Projects() {
               </p>
             </div>
             <div className="lang-box flex flex-row justify-start items-center gap-x-2 pl-[5px]">
-              <span className="w-[10px] h-[10px] bg-red-500 rounded-full"></span>
+              <span className="w-[10px] h-[10px] bg-yellow-300 rounded-full"></span>
               <span className="">Javascript</span>
             </div>
           </div>
