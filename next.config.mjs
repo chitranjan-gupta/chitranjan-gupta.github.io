@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "komarev.com",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
     ],
   },
 };
