@@ -20,7 +20,7 @@ export default function Home() {
             Hi 👋, I&apos;m Chitranjan Kumar Gupta
           </h1>
           <h2 className="bungee-tint font-black text-2xl text-center">
-            A passionate developer from India
+            A passionate developer from Bihar, India
           </h2>
         </div>
         <div className="mt-4 text-base dark:text-[#E0E0E0]">
