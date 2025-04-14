@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { QRCodeSVG } from "qrcode.react";
+
 import DateTime from "@/components/date-time";
-import {QRCodeSVG} from 'qrcode.react';
 import { SITE_URL } from "@/constants";
 
 export default function BlogCard({ blog }: { blog: any }) {
@@ -32,10 +33,8 @@ export default function BlogCard({ blog }: { blog: any }) {
             {blog?.description}
           </p>
         </div>
-        <Link href={`/blogs/${blog?.slug}`} className="p-1 mb-8 w-full" prefetch={false}>
-          <button className="bg-[#FF6F61] dark:bg-[#00BFFF] w-full h-10 rounded-lg text-[#2C3E50] dark:text-gray-100">
-            Read More
-          </button>
+        <Link href={`/blogs/${blog?.slug}`} className="p-1 mb-8 text-center bg-[#FF6F61] dark:bg-[#00BFFF] w-full h-auto rounded-lg text-[#2C3E50] dark:text-gray-100" prefetch={false}>
+          Check out {blog?.title}
         </Link>
       </div>
       <div className="w-full sm:w-80 h-32 shadow-md relative bg-[#E8F5E9] dark:bg-[#E0E0E0] ticketmarker">
@@ -46,7 +45,7 @@ export default function BlogCard({ blog }: { blog: any }) {
         <div className="flex flex-row gap-x-2 p-8">
           <QRCodeSVG value={`${SITE_URL}/blogs/${blog?.slug}`} className="w-[70px] h-[70px] bg-transparent dark:bg-white" />
           <div className="">
-            <h6>Scan or</h6>
+            <p>Scan or</p>
             <p>Show the QR-code when requested</p>
           </div>
         </div>

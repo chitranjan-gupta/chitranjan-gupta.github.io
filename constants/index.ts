@@ -9,3 +9,4 @@ export const GITHUB_PROFILE = "https://github.com/chitranjan-gupta";
 export const GOOGLE_ANALYTICS_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!;
 export const GOOGLE_TAG_MANAGER_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID!;
 export const GOOGLE_SEARCH_CONSOLE_ID = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_ID!
+export const GOOGLE_ADSENSE_ID = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID!

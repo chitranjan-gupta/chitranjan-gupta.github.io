@@ -25,6 +25,9 @@ export default function Sticky() {
           <span className="font-bold text-2xl dark:text-[#E0E0E0]">
             Chitranjan Kumar Gupta
           </span>
+          <span className="font-bold text-2xl dark:text-[#E0E0E0]">
+            चितरंजन कुमार गुप्ता
+          </span>
           <span className="font-bold text-xl mt-2 dark:text-[#E0E0E0]">
             he/him
           </span>

@@ -5,7 +5,7 @@ import useColorScheme from "@/hooks/useColorScheme";
 export default function ColorButton({ className }: { className: string }) {
   const { colorScheme, setColorScheme } = useColorScheme();
   return (
-    <button onClick={() => setColorScheme((prev) => !prev)} className={className}>
+    <button title="Change Color Scheme" onClick={() => setColorScheme((prev) => !prev)} className={className}>
       {colorScheme ? (
         <div>
           <svg

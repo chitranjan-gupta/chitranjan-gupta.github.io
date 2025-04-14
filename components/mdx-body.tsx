@@ -60,7 +60,7 @@ function A({ children, ...props }: AProps) {
     );
   } else {
     return (
-      <Link {...props} href={props.href || ""}>
+      <Link {...props} href={props.href || ""} className={`${props.className} break-words`}>
         {children}
       </Link>
     );

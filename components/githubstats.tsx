@@ -14,6 +14,7 @@ export default function GithubStats() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end p-5 md:p-0">
           <div>
             <img
+              loading="lazy"
               className="content-center items-center w-auto h-auto"
               src="https://github-readme-stats.vercel.app/api?username=chitranjan-gupta&show_icons=true"
               alt="chitranjan-gupta"
@@ -21,6 +22,7 @@ export default function GithubStats() {
               height={500}
             />
             <img
+              loading="lazy"
               className="content-center items-center w-auto h-auto"
               src="https://streak-stats.demolab.com/?user=chitranjan-gupta"
               alt="chitranjan-gupta"
@@ -29,6 +31,7 @@ export default function GithubStats() {
             />
           </div>
           <img
+            loading="lazy"
             className="w-auto h-auto"
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=chitranjan-gupta&layout=pie"
             alt="chitranjan-gupta"

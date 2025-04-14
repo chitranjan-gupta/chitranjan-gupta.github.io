@@ -1,7 +1,7 @@
+import { cache } from "react";
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs/promises";
-import { cache } from "react";
 
 const getBlogs = cache(async () => {
   const blogs = await fs.readdir("./blogs/");
@@ -24,9 +24,13 @@ const getBlogs = cache(async () => {
   );
 });
 
-export default getBlogs;
-
-export async function getBlog(slug: string) {
+const getBlog = cache(async (slug: string) => {
   const blogs = await getBlogs();
   return blogs.find((blog: any) => blog !== null && blog.slug === slug);
-}
+})
+
+export {
+  getBlog
+};
+
+export default getBlogs;

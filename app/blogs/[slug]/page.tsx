@@ -25,6 +25,13 @@ export default async function Page({
 }) {
   const blog: any = await getBlog(params.slug);
   if (!blog) return notFound();
+  const blogs = await getBlogs();
+  const relatedBlogs = blogs.filter((blog) => blog !== null).filter(
+    (relatedBlog: any) =>
+      relatedBlog.slug !== blog.slug &&
+      relatedBlog.tags.some((tag: any) => blog.tags.includes(tag))
+  );
+  blog.relatedBlogs = relatedBlogs.length > 0 ? relatedBlogs.slice(0, 3): blogs.slice(0, 3);
   return (
     <Fragment>
       <div>
@@ -79,6 +86,22 @@ export default async function Page({
       </div>
       <hr />
       <MDXBody>{blog?.body}</MDXBody>
+      <div>
+        <h2 className="text-2xl font-bold mt-4 mb-2">Recent Blogs</h2>
+        <div className="flex flex-col gap-2">
+          {blog?.relatedBlogs?.map((relatedBlog: any) => (
+            relatedBlog !== null && (
+            <Link
+              key={relatedBlog.slug}
+              href={`/blogs/${relatedBlog.slug}`}
+              className="no-underline break-words text-blue-500 hover:text-blue-700"
+            >
+              {relatedBlog.title}
+            </Link>
+            )
+          ))}
+        </div>
+      </div>
     </Fragment>
   );
 }

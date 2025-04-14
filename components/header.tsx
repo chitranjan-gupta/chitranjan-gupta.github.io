@@ -8,10 +8,10 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   function handleClick(sectionId: string, offset: number) {
-    if (pathname.includes("/blogs")) {
-      router.push(`/#${sectionId}`);
-    } else {
+    if (pathname === "/") {
       scrollToSection(sectionId, offset);
+    } else {
+      router.push(`/#${sectionId}`);
     }
   }
   return (

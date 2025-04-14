@@ -151,9 +151,8 @@ export default function Footer() {
         </div>
         <div className="flex flex-row justify-center items-center w-full">
           <img
-            src={
-              "https://komarev.com/ghpvc/?username=chitranjan-gupta&label=Profile%20views&color=0e75b6&style=flat"
-            }
+            loading="lazy"
+            src="https://komarev.com/ghpvc/?username=chitranjan-gupta&label=Profile%20views&color=0e75b6&style=flat"
             width={120}
             height={60}
             alt="chitranjan-gupta"
