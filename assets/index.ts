@@ -64,6 +64,8 @@ import whatsapplogo from "./images/whatsapp-logo.png";
 import telegramlogo from "./images/telegram-logo.png";
 import shikshasetuapp from "./images/shikshasetu-app.png";
 import medium from "./images/medium.png";
+import shikshasetuextension from "./images/shikshasetu-extension.webp";
+import indiaflag from "./images/flag-of-India.webp";
 
 export {
   author,
@@ -131,5 +133,7 @@ export {
   whatsapplogo,
   telegramlogo,
   shikshasetuapp,
-  medium
+  medium,
+  shikshasetuextension,
+  indiaflag,
 };

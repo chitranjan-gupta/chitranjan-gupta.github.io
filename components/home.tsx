@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
+import { indiaflag } from "@/assets";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
     >
       <div className="emptyBox hidden md:block md:w-1/3 h-full"></div>
       <div className="detailBox w-full md:w-2/3 p-5 md:p-0 h-full flex flex-col justify-center items-center">
+        <div className="flex flex-row">
+          <Image alt="india flag" src={indiaflag} width={60} height={10} />
+        </div>
         <div>
           <span className="text-xl font-extrabold dark:text-[#E0E0E0]">
             Welcome to my portfolio!
@@ -34,7 +40,8 @@ export default function Home() {
           <p>
             I value innovation and excellence in my work, and I&apos;m always
             eager to learn new technologies and approaches. <br />
-            Check out my portfolio section to see my projects and checkout my blogs.
+            Check out my portfolio section to see my projects and checkout my
+            blogs.
           </p>
         </div>
         <div className="cta flex flex-row gap-[10px] mt-3">

@@ -14,6 +14,7 @@ import {
   shikshasetuapp,
   websocket_chat,
   wrenchworks,
+  shikshasetuextension
 } from "@/assets";
 
 export default function Portfolio() {
@@ -30,9 +31,38 @@ export default function Portfolio() {
           </h2>
         </div>
         <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 gap-10">
-        <div
+          <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
             id="0"
+          >
+            <div className="rounded-[10px] bg-[white] w-full h-full">
+              <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
+                <div className="relative w-full h-full rounded-[10px]">
+                  <Image
+                    fill
+                    alt="ShikshaSetu extension"
+                    src={shikshasetuextension}
+                    className="w-full h-full object-fill rounded-[10px]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="-translate-y-10 w-full text-center text-2xl bungee-spice font-black">
+                  <Link
+                    href="https://github.com/chitranjan-gupta/shikshasetu"
+                    target="_blank"
+                    referrerPolicy="no-referrer"
+                    prefetch={false}
+                  >
+                    ShikshaSetu Extension
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
+            id="1"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -61,7 +91,7 @@ export default function Portfolio() {
 
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="1"
+            id="2"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -90,7 +120,7 @@ export default function Portfolio() {
 
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="2"
+            id="3"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -119,7 +149,7 @@ export default function Portfolio() {
 
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="3"
+            id="4"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -148,7 +178,7 @@ export default function Portfolio() {
 
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="4"
+            id="5"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -174,9 +204,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="5"
+            id="6"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -202,9 +233,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="6"
+            id="7"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -230,9 +262,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="7"
+            id="8"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -258,9 +291,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="8"
+            id="9"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -286,9 +320,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="9"
+            id="10"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
@@ -314,9 +349,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
+
           <div
             className="slide relative w-full h-[280px] md:w-[420px] md:h-[320px] overflow-hidden shadow-md rounded-[10px]"
-            id="10"
+            id="11"
           >
             <div className="rounded-[10px] bg-[white] w-full h-full">
               <div className="p-0 bg-white text-gray-950 rounded-[10px] w-full h-full">
