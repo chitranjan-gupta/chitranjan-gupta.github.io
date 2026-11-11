@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Cosmic Indigo -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050914" />
+      <stop offset="50%" stop-color="#0a1226" />
+      <stop offset="100%" stop-color="#03060c" />
+    </linearGradient>
+
+    <!-- Monogram Gradient: Electric Indigo to Vivid Cyan -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="60%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Accent Dot / Bracket Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+
+    <!-- Outer Border Glow -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(99, 102, 241, 0.7)" />
+      <stop offset="50%" stop-color="rgba(6, 182, 212, 0.3)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.08)" />
+    </linearGradient>
+
+    <!-- Radial Soft Glow in center -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base with Dark Glassy Finish -->
+  <rect x="16" y="16" width="480" height="480" rx="128" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="12" />
+
+  <!-- Ambient Light Orb -->
+  <circle cx="256" cy="256" r="210" fill="url(#centerGlow)" />
+
+  <!-- Code Syntax Left Bracket '<' -->
+  <path d="M 120 256 L 155 210" fill="none" stroke="#6366f1" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+  <path d="M 120 256 L 155 302" fill="none" stroke="#6366f1" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Monogram Initials "CK" -->
+  <!-- Letter C -->
+  <path d="M 230 195 C 215 175, 175 175, 160 215 C 145 256, 145 275, 160 305 C 175 335, 215 335, 230 315"
+        fill="none" stroke="url(#primaryGrad)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Letter K -->
+  <!-- Stem -->
+  <line x1="270" y1="180" x2="270" y2="332" stroke="url(#primaryGrad)" stroke-width="38" stroke-linecap="round" />
+  <!-- Upper Arm -->
+  <line x1="274" y1="260" x2="338" y2="185" stroke="url(#primaryGrad)" stroke-width="36" stroke-linecap="round" />
+  <!-- Lower Arm -->
+  <line x1="284" y1="245" x2="345" y2="332" stroke="url(#primaryGrad)" stroke-width="36" stroke-linecap="round" />
+
+  <!-- Closing Tag Slash & Bracket '/>' -->
+  <line x1="375" y1="210" x2="395" y2="302" stroke="#06b6d4" stroke-width="18" stroke-linecap="round" opacity="0.6" />
+  <path d="M 405 215 L 435 256 L 405 297" fill="none" stroke="#06b6d4" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Sparkling Dev Pulse Dot -->
+  <circle cx="348" cy="330" r="14" fill="url(#accentGrad)" />
+</svg>

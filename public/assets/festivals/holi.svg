@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="holiBg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#FFF0F8"/>
+      <stop offset="60%" stop-color="#FCE4EC"/>
+      <stop offset="100%" stop-color="#F8BBD0"/>
+    </radialGradient>
+    <linearGradient id="gulalPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4081"/>
+      <stop offset="100%" stop-color="#C2185B"/>
+    </linearGradient>
+    <linearGradient id="gulalCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0097A7"/>
+    </linearGradient>
+    <linearGradient id="gulalYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEB3B"/>
+      <stop offset="100%" stop-color="#F57F17"/>
+    </linearGradient>
+    <linearGradient id="brassBowl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="50%" stop-color="#FFB300"/>
+      <stop offset="100%" stop-color="#FF8F00"/>
+    </linearGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#holiBg)"/>
+
+  <!-- Splashes of Gulal in Sky -->
+  <!-- Cyan Splash -->
+  <path d="M100 80 Q130 50 160 90 T220 70 Q240 120 190 140 T120 130 Z" fill="url(#gulalCyan)" opacity="0.65" filter="url(#softBlur)"/>
+  <circle cx="80" cy="60" r="10" fill="#00E5FF" opacity="0.7"/>
+  <circle cx="240" cy="50" r="8" fill="#00E5FF" opacity="0.7"/>
+  <circle cx="210" cy="110" r="6" fill="#00E5FF" opacity="0.7"/>
+
+  <!-- Magenta/Pink Splash -->
+  <path d="M300 90 Q340 40 380 80 T430 110 Q400 160 360 140 T290 120 Z" fill="url(#gulalPink)" opacity="0.7" filter="url(#softBlur)"/>
+  <circle cx="430" cy="60" r="12" fill="#E91E63" opacity="0.7"/>
+  <circle cx="310" cy="60" r="9" fill="#E91E63" opacity="0.7"/>
+  <circle cx="450" cy="130" r="7" fill="#E91E63" opacity="0.7"/>
+
+  <!-- Purple / Violet Splash -->
+  <path d="M200 180 Q250 130 300 170 T350 220 Q290 270 240 240 T180 210 Z" fill="#7C4DFF" opacity="0.45" filter="url(#softBlur)"/>
+
+  <!-- Golden Pichkari (Water Gun) -->
+  <g transform="translate(180, 210) rotate(-35)">
+    <!-- Pichkari Body -->
+    <rect x="0" y="0" width="180" height="26" rx="13" fill="url(#brassBowl)" stroke="#E65100" stroke-width="1.5"/>
+    <!-- Nozzle -->
+    <polygon points="-25,13 0,5 0,21" fill="#FF6D00"/>
+    <!-- Piston Handle -->
+    <rect x="180" y="8" width="60" height="10" rx="3" fill="#BDBDBD"/>
+    <circle cx="245" cy="13" r="14" fill="#E91E63"/>
+    <!-- Pichkari Spray Stream -->
+    <path d="M-25 13 Q-80 0 -140 20" fill="none" stroke="#00E5FF" stroke-width="7" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- Traditional Thali / Clay Bowls of Colorful Gulal -->
+  <!-- Bowl 1: Pink Gulal (Left) -->
+  <g transform="translate(140, 360)">
+    <ellipse cx="0" cy="20" rx="65" ry="22" fill="#E0E0E0"/>
+    <path d="M-65 20 Q0 60 65 20 Z" fill="url(#brassBowl)"/>
+    <!-- Powder Mound -->
+    <path d="M-55 18 Q0 -25 55 18 Z" fill="url(#gulalPink)"/>
+    <ellipse cx="0" cy="18" rx="55" ry="10" fill="#FF4081" opacity="0.9"/>
+  </g>
+
+  <!-- Bowl 2: Yellow Gulal (Center) -->
+  <g transform="translate(250, 390)">
+    <ellipse cx="0" cy="22" rx="75" ry="26" fill="#E0E0E0"/>
+    <path d="M-75 22 Q0 70 75 22 Z" fill="url(#brassBowl)"/>
+    <!-- Powder Mound -->
+    <path d="M-65 20 Q0 -35 65 20 Z" fill="url(#gulalYellow)"/>
+    <ellipse cx="0" cy="20" rx="65" ry="12" fill="#FFEE58" opacity="0.9"/>
+  </g>
+
+  <!-- Bowl 3: Green Gulal (Right) -->
+  <g transform="translate(360, 360)">
+    <ellipse cx="0" cy="20" rx="65" ry="22" fill="#E0E0E0"/>
+    <path d="M-65 20 Q0 60 65 20 Z" fill="url(#brassBowl)"/>
+    <!-- Powder Mound -->
+    <path d="M-55 18 Q0 -25 55 18 Z" fill="#00E676"/>
+    <ellipse cx="0" cy="18" rx="55" ry="10" fill="#69F0AE" opacity="0.9"/>
+  </g>
+
+  <!-- Title Text -->
+  <text x="250" y="475" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="22" fill="#C2185B" letter-spacing="4">रंगोत्सव होली</text>
+</svg>

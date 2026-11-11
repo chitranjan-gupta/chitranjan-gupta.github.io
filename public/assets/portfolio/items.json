@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "ShikshaSetu Extension",
+    "alt": "ShikshaSetu extension",
+    "href": "https://github.com/chitranjan-gupta/shikshasetu",
+    "image": "/assets/portfolio/shikshasetu-extension.webp"
+  },
+  {
+    "id": 2,
+    "title": "ShikshaSetu App",
+    "alt": "ShikshaSetu app",
+    "href": "https://github.com/chitranjan-gupta/lms-app",
+    "image": "/assets/portfolio/shikshasetu-app.webp"
+  },
+  {
+    "id": 3,
+    "title": "ShikshaSetu",
+    "alt": "ShikshaSetu",
+    "href": "https://lms-sand-mu.vercel.app/",
+    "image": "/assets/portfolio/shikshasetu.webp"
+  },
+  {
+    "id": 4,
+    "title": "Wrenchworks",
+    "alt": "Wrenchworks",
+    "href": "https://wrenchworks.vercel.app/",
+    "image": "/assets/portfolio/wrenchworks.webp"
+  },
+  {
+    "id": 5,
+    "title": "Coldbreez",
+    "alt": "Coldbreez",
+    "href": "https://coldbreez.vercel.app/",
+    "image": "/assets/portfolio/coldbreez.webp"
+  },
+  {
+    "id": 6,
+    "title": "Papa Player",
+    "alt": "papa-player",
+    "href": "https://papa-player.vercel.app/",
+    "image": "/assets/portfolio/papa-player.webp"
+  },
+  {
+    "id": 7,
+    "title": "Image Shuffler",
+    "alt": "image-shuffler",
+    "href": "https://images-shuffler.vercel.app/",
+    "image": "/assets/portfolio/image-shuffler.webp"
+  },
+  {
+    "id": 8,
+    "title": "Pattern Lock",
+    "alt": "pattern-lock",
+    "href": "https://patternlock.vercel.app/",
+    "image": "/assets/portfolio/pattern-lock.webp"
+  },
+  {
+    "id": 9,
+    "title": "EXAMSFORCAREERS",
+    "alt": "examsforcareers",
+    "href": "https://examsforcareers.vercel.app/",
+    "image": "/assets/portfolio/examsforcareers.webp"
+  },
+  {
+    "id": 10,
+    "title": "File Explorer",
+    "alt": "file-explorer",
+    "href": "https://chitranjan-gupta.github.io/file-explorer/",
+    "image": "/assets/portfolio/file-explorer.webp"
+  },
+  {
+    "id": 11,
+    "title": "Websocket Chat",
+    "alt": "websocket-chat",
+    "href": "https://websocket-chat.up.railway.app/",
+    "image": "/assets/portfolio/websocket-chat.webp"
+  },
+  {
+    "id": 12,
+    "title": "Know Tech",
+    "alt": "knowtech",
+    "href": "https://knowtech.netlify.app/",
+    "image": "/assets/portfolio/knowtech.webp"
+  }
+]

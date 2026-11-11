@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="dussehraBg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#4A1800"/>
+      <stop offset="45%" stop-color="#240B00"/>
+      <stop offset="100%" stop-color="#100300"/>
+    </radialGradient>
+    <linearGradient id="goldBow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="35%" stop-color="#FFD700"/>
+      <stop offset="75%" stop-color="#FF8F00"/>
+      <stop offset="100%" stop-color="#D84315"/>
+    </linearGradient>
+    <radialGradient id="arrowFire" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FFEB3B"/>
+      <stop offset="65%" stop-color="#FF5722"/>
+      <stop offset="100%" stop-color="#D50000" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#FF6D00" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FF3D00" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Deep Majestic Background -->
+  <rect width="500" height="500" fill="url(#dussehraBg)"/>
+
+  <!-- Golden Sun of Dharma Glowing Aura -->
+  <circle cx="250" cy="220" r="170" fill="url(#sunGlow)"/>
+  <circle cx="250" cy="220" r="135" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="10,6" opacity="0.45"/>
+  <circle cx="250" cy="220" r="100" fill="none" stroke="#FF8F00" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="250" cy="220" r="60" fill="#FFB300" opacity="0.15"/>
+
+  <!-- Centered Divine Bow (Kodanda of Lord Rama) with Fiery Victory Arrow -->
+  <g transform="translate(250, 220)">
+    <!-- Aura behind arrowhead -->
+    <circle cx="0" cy="-155" r="50" fill="url(#arrowFire)"/>
+
+    <!-- Sacred Golden Bow Arc -->
+    <path d="M-150 50 Q0 -60 150 50" fill="none" stroke="url(#goldBow)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M-150 50 Q0 -60 150 50" fill="none" stroke="#FFF9C4" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Bow String pulled tight to arrowhead notch -->
+    <line x1="-150" y1="50" x2="0" y2="90" stroke="#FFFFFF" stroke-width="2.2" opacity="0.9"/>
+    <line x1="0" y1="90" x2="150" y2="50" stroke="#FFFFFF" stroke-width="2.2" opacity="0.9"/>
+
+    <!-- Ornate Central Bow Grip with Ruby Motif -->
+    <rect x="-16" y="-22" width="32" height="18" rx="4" fill="#B71C1C" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="0" cy="-13" r="4" fill="#FFD700"/>
+
+    <!-- Golden Arrow Shaft -->
+    <line x1="0" y1="90" x2="0" y2="-155" stroke="#FFD700" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="90" x2="0" y2="-155" stroke="#FFF9C4" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Arrow Fletching Feathers -->
+    <path d="M-16 72 L0 88 L16 72" stroke="#D50000" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M-18 56 L0 72 L18 56" stroke="#FF9800" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M-16 40 L0 56 L16 40" stroke="#FFD700" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Radiant Golden Arrowhead -->
+    <polygon points="0,-180 18,-140 0,-148 -18,-140" fill="#FFFFFF" stroke="#FFD700" stroke-width="2.5"/>
+  </g>
+
+  <!-- Celebratory Golden Festive Embers & Sparkles -->
+  <g fill="#FFD700">
+    <circle cx="95" cy="110" r="3.5"/>
+    <circle cx="395" cy="90" r="4"/>
+    <circle cx="435" cy="220" r="3"/>
+    <circle cx="75" cy="230" r="3"/>
+    <circle cx="110" cy="330" r="2.5"/>
+    <circle cx="380" cy="330" r="3"/>
+    <circle cx="250" cy="50" r="3"/>
+  </g>
+
+  <!-- Celebratory Embers Stars -->
+  <g fill="#FFF9C4" opacity="0.9">
+    <polygon points="120,80 123,88 131,91 123,94 120,102 117,94 109,91 117,88"/>
+    <polygon points="370,140 372,146 378,148 372,150 370,156 368,150 362,148 368,146"/>
+  </g>
+
+  <!-- Festive Typography -->
+  <text x="250" y="435" text-anchor="middle" font-family="'Georgia', serif" font-weight="bold" font-size="26" fill="#FFD700" letter-spacing="4">
+    विजयदशमी दशहरा
+  </text>
+  <text x="250" y="465" text-anchor="middle" font-family="'Arial', sans-serif" font-weight="600" font-size="12" fill="#FF8F00" letter-spacing="3">
+    VICTORY OF LIGHT &amp; DHARMA
+  </text>
+</svg>

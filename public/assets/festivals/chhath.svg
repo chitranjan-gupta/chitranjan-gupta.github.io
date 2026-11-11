@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="chhathSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#BF360C"/>
+      <stop offset="40%" stop-color="#E65100"/>
+      <stop offset="65%" stop-color="#FFB300"/>
+      <stop offset="85%" stop-color="#FFE082"/>
+      <stop offset="100%" stop-color="#E1F5FE"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FFF9C4"/>
+      <stop offset="60%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FF6F00" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="waterFlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0288D1"/>
+      <stop offset="50%" stop-color="#0277BD"/>
+      <stop offset="100%" stop-color="#01579B"/>
+    </linearGradient>
+    <linearGradient id="bambooSoop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082"/>
+      <stop offset="60%" stop-color="#FFB74D"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#chhathSky)"/>
+
+  <!-- Rising Sacred Sun (Bhagwan Surya) -->
+  <circle cx="250" cy="180" r="140" fill="url(#sunGlow)"/>
+  <circle cx="250" cy="180" r="60" fill="#FFF9C4"/>
+  <circle cx="250" cy="180" r="50" fill="#FFFFFF"/>
+
+  <!-- Holy River Ganges / Water with Sun Reflection -->
+  <path d="M0 320 Q125 310 250 320 T500 320 L500 500 L0 500 Z" fill="url(#waterFlow)"/>
+
+  <!-- Golden Sun Shimmer on Water -->
+  <g fill="#FFE082" opacity="0.6">
+    <ellipse cx="250" cy="335" rx="45" ry="3"/>
+    <ellipse cx="250" cy="345" rx="65" ry="3.5"/>
+    <ellipse cx="250" cy="360" rx="85" ry="4"/>
+    <ellipse cx="250" cy="380" rx="60" ry="3"/>
+    <ellipse cx="250" cy="405" rx="40" ry="2.5"/>
+  </g>
+
+  <!-- Sugarcane Stalks (Ganna) in Arghya -->
+  <g stroke="#2E7D32" stroke-width="5" stroke-linecap="round">
+    <!-- Left Sugarcane -->
+    <path d="M120 480 Q140 300 190 120"/>
+    <path d="M190 120 Q210 90 230 110" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <path d="M185 130 Q160 100 150 120" stroke="#4CAF50" stroke-width="3" fill="none"/>
+
+    <!-- Right Sugarcane -->
+    <path d="M380 480 Q360 300 310 120"/>
+    <path d="M310 120 Q290 90 270 110" stroke="#4CAF50" stroke-width="3" fill="none"/>
+    <path d="M315 130 Q340 100 350 120" stroke="#4CAF50" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Traditional Bamboo Soop (Arghya Basket) -->
+  <g transform="translate(250, 370)">
+    <!-- Soop Basket Base -->
+    <path d="M-85 10 L85 10 L65 75 L-65 75 Z" fill="url(#bambooSoop)" stroke="#BF360C" stroke-width="2"/>
+    <!-- Soop Lip Curve -->
+    <path d="M-100 -5 Q0 -25 100 -5 L85 10 Q0 -10 -85 10 Z" fill="#FFE082" stroke="#E65100" stroke-width="1.5"/>
+
+    <!-- Fruits in Soop (Coconut, Thekua, Banana, Daabh Nimbu) -->
+    <!-- Thekua & Prasad offerings -->
+    <ellipse cx="-45" cy="5" rx="14" ry="10" fill="#8D6E63"/>
+    <ellipse cx="45" cy="5" rx="14" ry="10" fill="#8D6E63"/>
+    <!-- Coconut (Shriphal) -->
+    <ellipse cx="0" cy="-5" rx="22" ry="18" fill="#5D4037" stroke="#3E2723" stroke-width="2"/>
+    <!-- Coconut fibers -->
+    <path d="M-5 -22 L0 -30 L5 -22" stroke="#8D6E63" stroke-width="2" fill="none"/>
+    <!-- Bananas -->
+    <path d="M-30 0 Q-15 -18 10 -8" fill="none" stroke="#FFD54F" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Burning Earthen Diya in Soop for Arghya -->
+    <path d="M-18 20 Q0 35 18 20 Z" fill="#D84315"/>
+    <path d="M0 5 Q7 16 0 20 Q-7 16 0 5 Z" fill="#FFD600"/>
+    <circle cx="0" cy="14" r="3" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Title Text -->
+  <text x="250" y="475" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="22" fill="#FFFFFF" letter-spacing="4">जय छठी मइया</text>
+</svg>

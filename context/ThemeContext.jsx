@@ -12,12 +12,21 @@ export const DESIGNS = [
     { id: 'cod', label: 'Warfare', desc: 'Tactical', icon: '⊕' },
     { id: 'modern', label: 'Modern', desc: 'Sleek/Web', icon: '▲' },
     { id: 'indic', label: 'Indic', desc: 'Traditional', icon: '𑁍' },
+    { id: 'apple', label: 'Cupertino', desc: 'Apple UI', icon: '' },
+    { id: 'hacker', label: 'CyberSec', desc: 'Red Team / Ops', icon: '☠' },
 ];
 
 /* ════════════════════════════════════════════════════════════════
    PER-DESIGN COLOUR PALETTES
 ════════════════════════════════════════════════════════════════ */
 export const DESIGN_THEMES = {
+    hacker: [
+        { id: 'redteam', label: 'Red Team Ops', accent: '#FF0033', secondary: '#990011', icon: '🩸' },
+        { id: 'blackhat', label: 'Black Hat ZeroDay', accent: '#00FF41', secondary: '#0D0208', icon: '☠' },
+        { id: 'kali', label: 'Kali Linux Blue', accent: '#00D2FF', secondary: '#1D2671', icon: '🐉' },
+        { id: 'c2amber', label: 'C2 Command Amber', accent: '#FFB000', secondary: '#78350F', icon: '☣' },
+        { id: 'purpleteam', label: 'Purple Team Fusion', accent: '#A855F7', secondary: '#EC4899', icon: '👾' },
+    ],
     aurora: [
         { id: 'cosmic', label: 'Cosmic', accent: '#6366f1', secondary: '#06b6d4' },
         { id: 'rose', label: 'Midnight Rose', accent: '#ec4899', secondary: '#f43f5e' },
@@ -51,8 +60,19 @@ export const DESIGN_THEMES = {
         { id: 'next-dark', label: 'Ebony', accent: '#ffffff', secondary: '#444444' }
     ],
     indic: [
-        { id: 'heritage', label: 'Heritage', accent: '#FF9933', secondary: '#E2725B' },
-        { id: 'lotus', label: 'Lotus', accent: '#FFD700', secondary: '#00416A' }
+        { id: 'chhath', label: 'छठ पूजा (Chhath Puja)', accent: '#C2410C', secondary: '#1D4F7A', icon: '☀️' },
+        { id: 'diwali', label: 'दीपावली (Diwali)', accent: '#FF9933', secondary: '#FFD700', icon: '🪔' },
+        { id: 'holi', label: 'होली (Holi)', accent: '#FF1493', secondary: '#00E5FF', icon: '🎨' },
+        { id: 'dussehra', label: 'दशहरा (Dussehra)', accent: '#FF4500', secondary: '#FFD700', icon: '🏹' },
+        { id: 'raksha-bandhan', label: 'रक्षाबंधन (Raksha Bandhan)', accent: '#D81B60', secondary: '#FFD700', icon: '🧵' },
+        { id: 'heritage', label: 'Heritage', accent: '#FF9933', secondary: '#E2725B', icon: '𑁍' },
+        { id: 'lotus', label: 'Lotus Night', accent: '#FFD700', secondary: '#00416A', icon: '🪷' },
+    ],
+    apple: [
+        { id: 'apple-dark', label: 'Space Black', accent: '#2997ff', secondary: '#f5f5f7' },
+        { id: 'apple-intelligence', label: 'Siri Glow', accent: '#ff375f', secondary: '#bf5af2' },
+        { id: 'apple-titanium', label: 'Natural Titanium', accent: '#9a9489', secondary: '#e5e5ea' },
+        { id: 'apple-light', label: 'Silver White', accent: '#0071e3', secondary: '#1d1d1f' }
     ],
 };
 
@@ -74,19 +94,22 @@ export function ThemeProvider({ children }) {
 
     // Initial load from localStorage
     useEffect(() => {
-        const savedDesign = localStorage.getItem('portfolio-design') || 'aurora';
-        const rawTheme = localStorage.getItem('portfolio-theme');
+        const timer = setTimeout(() => {
+            const savedDesign = localStorage.getItem('portfolio-design') || 'aurora';
+            const rawTheme = localStorage.getItem('portfolio-theme');
 
-        let savedTheme = rawTheme || getDefaultTheme(savedDesign);
+            let savedTheme = rawTheme || getDefaultTheme(savedDesign);
 
-        // Validate theme belongs to design
-        const palette = DESIGN_THEMES[savedDesign] || DESIGN_THEMES.aurora;
-        const isValid = palette.some(t => t.id === savedTheme);
-        if (!isValid) savedTheme = palette[0].id;
+            // Validate theme belongs to design
+            const palette = DESIGN_THEMES[savedDesign] || DESIGN_THEMES.aurora;
+            const isValid = palette.some(t => t.id === savedTheme);
+            if (!isValid) savedTheme = palette[0].id;
 
-        setDesignState(savedDesign);
-        setThemeState(savedTheme);
-        setMounted(true);
+            setDesignState(savedDesign);
+            setThemeState(savedTheme);
+            setMounted(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     // Sync attributes to document whenever theme/design changes
@@ -102,11 +125,13 @@ export function ThemeProvider({ children }) {
         setThemeState(id);
     };
 
-    const setDesign = (id) => {
+    const setDesign = (id, specificThemeId = null) => {
         setDesignState(id);
-        // Auto-select first theme of new design if current isn't in palette
         const palette = DESIGN_THEMES[id] || DESIGN_THEMES.aurora;
         setThemeState((prev) => {
+            if (specificThemeId && palette.some(t => t.id === specificThemeId)) {
+                return specificThemeId;
+            }
             const isAvailable = palette.some((t) => t.id === prev);
             return isAvailable ? prev : palette[0].id;
         });

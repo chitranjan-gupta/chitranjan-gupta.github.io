@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="nightSky" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#2D114D"/>
+      <stop offset="50%" stop-color="#140626"/>
+      <stop offset="100%" stop-color="#07020E"/>
+    </radialGradient>
+    <radialGradient id="diyaGlow" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FFF176"/>
+      <stop offset="55%" stop-color="#FF9800"/>
+      <stop offset="85%" stop-color="#E65100"/>
+      <stop offset="100%" stop-color="#E65100" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="clayBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D84315"/>
+      <stop offset="50%" stop-color="#BF360C"/>
+      <stop offset="100%" stop-color="#870000"/>
+    </linearGradient>
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="50%" stop-color="#FFF9C4"/>
+      <stop offset="100%" stop-color="#FFB300"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" fill="url(#nightSky)"/>
+
+  <!-- Rangoli Base Patterns in background -->
+  <g opacity="0.35" transform="translate(250, 360)">
+    <circle r="140" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="6,6"/>
+    <circle r="110" fill="none" stroke="#FF5722" stroke-width="1"/>
+    <circle r="80" fill="none" stroke="#FFD700" stroke-width="1.2"/>
+    <!-- Petals -->
+    <path d="M0 -140 Q25 -110 0 -80 Q-25 -110 0 -140" fill="#FF9800" opacity="0.5"/>
+    <path d="M140 0 Q110 25 80 0 Q110 -25 140 0" fill="#FF9800" opacity="0.5"/>
+    <path d="M0 140 Q25 110 0 80 Q-25 110 0 140" fill="#FF9800" opacity="0.5"/>
+    <path d="M-140 0 Q-110 25 -80 0 Q-110 -25 -140 0" fill="#FF9800" opacity="0.5"/>
+  </g>
+
+  <!-- Giant Halo Aura -->
+  <circle cx="250" cy="230" r="160" fill="url(#diyaGlow)" opacity="0.85"/>
+
+  <!-- Golden Sparkles -->
+  <g filter="url(#glow)">
+    <circle cx="120" cy="140" r="3" fill="#FFF9C4"/>
+    <circle cx="380" cy="130" r="2.5" fill="#FFF9C4"/>
+    <circle cx="90" cy="280" r="2" fill="#FFD700"/>
+    <circle cx="410" cy="270" r="3" fill="#FFD700"/>
+    <circle cx="200" cy="80" r="3.5" fill="#FFFFFF"/>
+    <circle cx="300" cy="90" r="2" fill="#FFD700"/>
+    <!-- Starbursts -->
+    <path d="M250 60 L253 75 L268 78 L253 81 L250 96 L247 81 L232 78 L247 75 Z" fill="#FFF9C4"/>
+    <path d="M140 180 L142 190 L152 192 L142 194 L140 204 L138 194 L128 192 L138 190 Z" fill="#FFD700"/>
+    <path d="M360 190 L362 200 L372 202 L362 204 L360 214 L358 204 L348 202 L358 200 Z" fill="#FFD700"/>
+  </g>
+
+  <!-- Big Terracotta Diya Body -->
+  <path d="M110 330 Q250 430 390 330 Q410 320 380 300 Q250 330 120 300 Q90 320 110 330 Z" fill="url(#clayBase)"/>
+  <!-- Gold Rim on Diya -->
+  <path d="M115 310 Q250 340 385 310 Q350 325 250 325 Q150 325 115 310 Z" fill="url(#goldRim)"/>
+  <!-- Intricate carvings on Diya -->
+  <path d="M160 345 Q250 395 340 345" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Center Floating Flame -->
+  <!-- Outer flame glow -->
+  <path d="M250 120 C285 190 310 240 295 285 C280 320 220 320 205 285 C190 240 215 190 250 120 Z" fill="#FF6D00" opacity="0.9" filter="url(#glow)"/>
+  <!-- Middle vibrant flame -->
+  <path d="M250 145 C275 200 295 240 285 275 C275 305 225 305 215 275 C205 240 225 200 250 145 Z" fill="#FFD600"/>
+  <!-- Inner hot white core -->
+  <path d="M250 180 C265 220 275 245 270 270 C265 290 235 290 230 270 C225 245 235 220 250 180 Z" fill="#FFFFFF"/>
+
+  <!-- Floating Flower Petals Around Base -->
+  <g fill="#E91E63" opacity="0.85">
+    <ellipse cx="140" cy="380" rx="14" ry="7" transform="rotate(-15, 140, 380)"/>
+    <ellipse cx="190" cy="405" rx="16" ry="8" transform="rotate(25, 190, 405)"/>
+    <ellipse cx="310" cy="405" rx="16" ry="8" transform="rotate(-25, 310, 405)"/>
+    <ellipse cx="360" cy="380" rx="14" ry="7" transform="rotate(15, 360, 380)"/>
+  </g>
+  <g fill="#FFB300" opacity="0.9">
+    <ellipse cx="165" cy="395" rx="12" ry="6" transform="rotate(10, 165, 395)"/>
+    <ellipse cx="250" cy="420" rx="15" ry="7"/>
+    <ellipse cx="335" cy="395" rx="12" ry="6" transform="rotate(-10, 335, 395)"/>
+  </g>
+
+  <!-- Typography Banner at Bottom -->
+  <text x="250" y="470" text-anchor="middle" font-family="'Playfair Display', serif" font-weight="700" font-size="20" fill="#FFD700" letter-spacing="4">शुभ दीपावली</text>
+</svg>

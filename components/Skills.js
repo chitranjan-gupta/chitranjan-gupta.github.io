@@ -10,12 +10,12 @@ const CATEGORIES = [
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
             </svg>
         ),
-        title: 'Frontend',
+        title: 'Frontend & Apps',
         tags: [
             { label: 'React', cls: 'tag-react' }, { label: 'Next.js', cls: 'tag-next' },
+            { label: 'React Native', cls: 'tag-react' }, { label: 'Expo', cls: 'tag-ts' },
             { label: 'TypeScript', cls: 'tag-ts' }, { label: 'JavaScript', cls: 'tag-js' },
-            { label: 'HTML5', cls: 'tag-html' }, { label: 'CSS3', cls: 'tag-css' },
-            { label: 'Redux', cls: 'tag-redux' }, { label: 'Vite', cls: 'tag-vite' },
+            { label: 'Tailwind CSS', cls: 'tag-html' }, { label: 'Electron.js', cls: 'tag-vite' },
         ],
     },
     {
@@ -24,12 +24,12 @@ const CATEGORIES = [
                 <rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" />
             </svg>
         ),
-        title: 'Backend',
+        title: 'Backend & APIs',
         tags: [
-            { label: 'Node.js', cls: 'tag-node' }, { label: 'Express', cls: 'tag-express' },
-            { label: 'Python', cls: 'tag-python' }, { label: 'MongoDB', cls: 'tag-mongo' },
-            { label: 'PostgreSQL', cls: 'tag-postgres' }, { label: 'Redis', cls: 'tag-redis' },
-            { label: 'GraphQL', cls: 'tag-graphql' }, { label: 'REST APIs', cls: 'tag-rest' },
+            { label: 'Node.js', cls: 'tag-node' }, { label: 'Express.js', cls: 'tag-express' },
+            { label: 'Cloudflare Workers', cls: 'tag-aws' }, { label: 'Laravel (PHP)', cls: 'tag-python' },
+            { label: 'Python', cls: 'tag-python' }, { label: 'C / C++', cls: 'tag-rest' },
+            { label: 'Solidity', cls: 'tag-graphql' }, { label: 'REST APIs', cls: 'tag-rest' },
         ],
     },
     {
@@ -38,22 +38,14 @@ const CATEGORIES = [
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
         ),
-        title: 'DevOps & Tools',
+        title: 'Databases, Cloud & Tools',
         tags: [
-            { label: 'AWS', cls: 'tag-aws' }, { label: 'Docker', cls: 'tag-docker' },
-            { label: 'Git', cls: 'tag-git' }, { label: 'CI/CD', cls: 'tag-ci' },
-            { label: 'Linux', cls: 'tag-linux' }, { label: 'Nginx', cls: 'tag-nginx' },
-            { label: 'Jest', cls: 'tag-jest' }, { label: 'Figma', cls: 'tag-figma' },
+            { label: 'MongoDB', cls: 'tag-mongo' }, { label: 'PostgreSQL', cls: 'tag-postgres' },
+            { label: 'MySQL / SQL', cls: 'tag-postgres' }, { label: 'Redis', cls: 'tag-redis' },
+            { label: 'Docker', cls: 'tag-docker' }, { label: 'Git / GitHub', cls: 'tag-git' },
+            { label: 'Sanity CMS', cls: 'tag-next' }, { label: 'WordPress', cls: 'tag-ci' },
         ],
     },
-];
-
-const BARS = [
-    { label: 'React / Next.js', pct: 92 },
-    { label: 'Node.js / Express', pct: 88 },
-    { label: 'TypeScript', pct: 85 },
-    { label: 'Databases (SQL & NoSQL)', pct: 80 },
-    { label: 'AWS / Cloud / DevOps', pct: 72 },
 ];
 
 export default function Skills() {
@@ -63,6 +55,8 @@ export default function Skills() {
     if (design === 'cod') return <SkillsCod />;
     if (design === 'modern') return <SkillsModern />;
     if (design === 'indic') return <SkillsIndic />;
+    if (design === 'apple') return <SkillsApple />;
+    if (design === 'hacker') return <SkillsHacker />;
     return <SkillsAurora />;
 }
 
@@ -106,47 +100,15 @@ function SkillsIndic() {
                         </div>
                     ))}
                 </div>
-
-                <div className="max-w-[1000px] mx-auto animate-modern-reveal">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                        {BARS.map(bar => (
-                            <div key={bar.label}>
-                                <div className="flex justify-between items-end mb-4">
-                                    <span className="text-[1.1rem] font-bold text-indic-fg italic">{bar.label}</span>
-                                    <span className="text-[0.9rem] font-bold text-indic-saffron">{bar.pct}%</span>
-                                </div>
-                                <div className="h-1 bg-indic-border/10 rounded-full overflow-hidden">
-                                    <div
-                                        className="h-full bg-indic-saffron"
-                                        style={{ width: `${bar.pct}%` }}
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
 }
 
 /* ═══════════════════════════════════════
-   AURORA — Tag clouds + progress bars
+   AURORA — Tag clouds
 ═══════════════════════════════════════ */
 function SkillsAurora() {
-    const barsRef = useRef(null);
-    useEffect(() => {
-        if (!barsRef.current) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                barsRef.current.querySelectorAll('[data-width]').forEach((bar) => { bar.style.width = `${bar.dataset.width}%`; });
-                observer.disconnect();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(barsRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <section id="skills" className="py-28 md:py-[7rem] bg-bg-secondary">
             <div className="w-[min(1200px,92vw)] mx-auto">
@@ -157,7 +119,7 @@ function SkillsAurora() {
                         <span className="bg-gradient-text bg-clip-text" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Skills</span>
                     </h2>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 reveal">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal">
                     {CATEGORIES.map(({ icon, title, tags }) => (
                         <div key={title} className="bg-white/[0.04] border border-[rgba(255,255,255,0.08)] rounded-[20px] p-7 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-[rgba(99,102,241,0.4)] hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(99,102,241,0.25)]">
                             <div className="flex items-center gap-3 mb-5">
@@ -166,18 +128,6 @@ function SkillsAurora() {
                             </div>
                             <div className="flex flex-wrap gap-[0.6rem]">
                                 {tags.map(({ label, cls }) => (<span key={label} className={`skill-tag ${cls}`}>{label}</span>))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="grid gap-5 max-w-[700px] mx-auto reveal" ref={barsRef}>
-                    {BARS.map(({ label, pct }) => (
-                        <div key={label} className="flex flex-col gap-2">
-                            <div className="flex justify-between text-[0.875rem] font-semibold text-text-secondary">
-                                <span>{label}</span><span className="text-accent-2">{pct}%</span>
-                            </div>
-                            <div className="h-[6px] bg-white/[0.06] rounded-full overflow-hidden">
-                                <div className="h-full rounded-full bg-gradient-accent shadow-[0_0_10px_rgba(99,102,241,0.5)] transition-[width] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]" data-width={pct} style={{ width: 0 }} />
                             </div>
                         </div>
                     ))}
@@ -192,19 +142,6 @@ function SkillsAurora() {
    TRON — Terminal readout
 ═══════════════════════════════════════ */
 function SkillsTron() {
-    const barsRef = useRef(null);
-    useEffect(() => {
-        if (!barsRef.current) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                barsRef.current.querySelectorAll('[data-width]').forEach((bar) => { bar.style.width = `${bar.dataset.width}%`; });
-                observer.disconnect();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(barsRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <section id="skills" className="py-28 md:py-[7rem] bg-bg-secondary">
             <div className="w-[min(1200px,92vw)] mx-auto">
@@ -221,7 +158,7 @@ function SkillsTron() {
                 </div>
 
                 {/* Skill modules */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     {CATEGORIES.map(({ title, tags }) => (
                         <div key={title} className="border border-[color-mix(in_srgb,var(--accent-1)_30%,transparent)] p-5 reveal"
                             style={{ background: 'rgba(0,8,16,0.9)', boxShadow: '0 0 15px -5px color-mix(in srgb, var(--accent-1) 15%, transparent)' }}>
@@ -240,29 +177,6 @@ function SkillsTron() {
                         </div>
                     ))}
                 </div>
-
-                {/* Progress bars — neon segmented */}
-                <div className="max-w-[700px] mx-auto reveal" ref={barsRef}>
-                    <div className="font-mono text-[0.6rem] tracking-[0.2em] text-accent-1 uppercase mb-4">// PROFICIENCY_SCAN</div>
-                    <div className="grid gap-4">
-                        {BARS.map(({ label, pct }) => (
-                            <div key={label} className="flex flex-col gap-2">
-                                <div className="flex justify-between font-mono text-[0.8rem]">
-                                    <span className="text-text-secondary">{label}</span>
-                                    <span className="text-accent-1">{pct}%</span>
-                                </div>
-                                <div className="h-[8px] bg-[rgba(0,8,16,0.8)] border border-[color-mix(in_srgb,var(--accent-1)_20%,transparent)]">
-                                    <div className="h-full bg-accent-1 transition-[width] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                                        data-width={pct} style={{
-                                            width: 0,
-                                            backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, transparent 10px, rgba(0,0,0,0.35) 10px, rgba(0,0,0,0.35) 12px)',
-                                            boxShadow: '0 0 10px -1px var(--accent-1), 0 0 3px var(--accent-1)',
-                                        }} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
@@ -273,19 +187,6 @@ function SkillsTron() {
    ARES — Bold tile grid
 ═══════════════════════════════════════ */
 function SkillsAres() {
-    const barsRef = useRef(null);
-    useEffect(() => {
-        if (!barsRef.current) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                barsRef.current.querySelectorAll('[data-width]').forEach((bar) => { bar.style.width = `${bar.dataset.width}%`; });
-                observer.disconnect();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(barsRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <section id="skills" className="py-28 md:py-[7rem] bg-bg-secondary">
             <div className="w-[min(1200px,92vw)] mx-auto">
@@ -297,7 +198,7 @@ function SkillsAres() {
                 </div>
 
                 {/* Bold skill blocks */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                     {CATEGORIES.map(({ title, tags }) => (
                         <div key={title} className="border-2 border-[rgba(255,255,255,0.08)] p-6 reveal transition-all duration-150 hover:border-accent-1 hover:translate-x-1 hover:translate-y-1"
                             style={{ background: 'rgba(5,5,5,0.95)', boxShadow: '5px 5px 0 var(--accent-1)' }}>
@@ -310,27 +211,6 @@ function SkillsAres() {
                         </div>
                     ))}
                 </div>
-
-                {/* Bold progress bars */}
-                <div className="max-w-[700px] mx-auto reveal" ref={barsRef}>
-                    <div className="grid gap-5">
-                        {BARS.map(({ label, pct }) => (
-                            <div key={label} className="flex flex-col gap-2">
-                                <div className="flex justify-between text-[0.9rem] font-black uppercase tracking-[0.05em]">
-                                    <span className="text-text-primary">{label}</span>
-                                    <span className="text-accent-1 text-[1.2rem]">{pct}%</span>
-                                </div>
-                                <div className="h-[10px] bg-[rgba(255,255,255,0.04)] border-2 border-[rgba(255,255,255,0.08)]">
-                                    <div className="h-full bg-accent-1 transition-[width] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                                        data-width={pct} style={{
-                                            width: 0,
-                                            backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, transparent 14px, rgba(0,0,0,0.3) 14px, rgba(0,0,0,0.3) 16px)',
-                                        }} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
@@ -341,19 +221,6 @@ function SkillsAres() {
    WARFARE — HUD loadout display
 ═══════════════════════════════════════ */
 function SkillsCod() {
-    const barsRef = useRef(null);
-    useEffect(() => {
-        if (!barsRef.current) return;
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                barsRef.current.querySelectorAll('[data-width]').forEach((bar) => { bar.style.width = `${bar.dataset.width}%`; });
-                observer.disconnect();
-            }
-        }, { threshold: 0.3 });
-        observer.observe(barsRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <section id="skills" className="py-28 md:py-[7rem] bg-bg-secondary">
             <div className="w-[min(1200px,92vw)] mx-auto">
@@ -370,12 +237,12 @@ function SkillsCod() {
                 </div>
 
                 {/* Loadout categories */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                     {CATEGORIES.map(({ title, tags }) => (
                         <div key={title} className="border border-[color-mix(in_srgb,var(--accent-1)_35%,rgba(80,70,40,0.5))] p-5 reveal"
                             style={{ clipPath: 'polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))', background: 'rgba(14,16,10,0.95)' }}>
                             <div className="font-mono text-[0.6rem] tracking-[0.2em] text-accent-1 uppercase mb-4 pb-2 border-b border-[color-mix(in_srgb,var(--accent-1)_25%,transparent)]">
-                                // {title.toUpperCase()}
+                                {'// '}{title.toUpperCase()}
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {tags.map(({ label }) => (
@@ -387,28 +254,6 @@ function SkillsCod() {
                             </div>
                         </div>
                     ))}
-                </div>
-
-                {/* HUD-style progress bars */}
-                <div className="max-w-[700px] mx-auto reveal" ref={barsRef}>
-                    <div className="font-mono text-[0.6rem] tracking-[0.2em] text-accent-1 uppercase mb-4">// PROFICIENCY READOUT</div>
-                    <div className="grid gap-4">
-                        {BARS.map(({ label, pct }) => (
-                            <div key={label} className="flex flex-col gap-2">
-                                <div className="flex justify-between font-mono text-[0.8rem]">
-                                    <span className="text-text-secondary">{label}</span>
-                                    <span className="text-accent-1">{pct}%</span>
-                                </div>
-                                <div className="h-[8px] bg-[rgba(14,16,10,0.9)] border border-[color-mix(in_srgb,var(--accent-1)_20%,rgba(80,70,40,0.4))]">
-                                    <div className="h-full bg-accent-1 transition-[width] duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                                        data-width={pct} style={{
-                                            width: 0,
-                                            backgroundImage: 'repeating-linear-gradient(90deg, transparent 0px, transparent 16px, rgba(0,0,0,0.4) 16px, rgba(0,0,0,0.4) 18px)',
-                                        }} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </div>
             </div>
         </section>
@@ -473,23 +318,100 @@ function SkillsModern() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </div>
+        </section>
+    );
+}
 
-                    {/* Performance Metrics Bento Card */}
-                    <div className="bento-card col-span-12 p-10 animate-modern-reveal" style={{ animationDelay: '0.3s' }}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                            {BARS.map(bar => (
-                                <div key={bar.label}>
-                                    <div className="flex justify-between items-end mb-4">
-                                        <span className="text-[1rem] font-bold text-geist-foreground tracking-tight">{bar.label}</span>
-                                        <span className="text-[0.8rem] font-black font-mono text-[var(--accent-2)]">{bar.pct}%</span>
-                                    </div>
-                                    <div className="h-[2px] bg-geist-gray-100 rounded-full overflow-hidden">
-                                        <div className="h-full bg-[var(--accent-2)]" style={{ width: `${bar.pct}%` }} />
-                                    </div>
+/* ═══════════════════════════════════════
+   APPLE — Cupertino Technologies Grid
+═══════════════════════════════════════ */
+function SkillsApple() {
+    return (
+        <section id="skills" className="py-20 md:py-28 relative overflow-hidden apple-section">
+            <div className="w-[min(1200px,92vw)] mx-auto">
+                <div className="mb-20 text-center max-w-[800px] mx-auto">
+                    <span className="apple-section-eyebrow">Architecture & Skills</span>
+                    <h2 className="apple-section-title">
+                        Pro capabilities. <br />
+                        <span className="text-apple-subtle">Unified across the full stack.</span>
+                    </h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                    {CATEGORIES.map((cat) => (
+                        <div key={cat.title} className="apple-card p-8 md:p-10 flex flex-col justify-between">
+                            <div>
+                                <div className="w-14 h-14 rounded-2xl bg-apple-icon-bg flex items-center justify-center text-apple-accent mb-6 shadow-sm border border-apple-border">
+                                    {cat.icon}
                                 </div>
-                            ))}
+                                <h3 className="text-[1.5rem] font-semibold text-apple-heading tracking-tight mb-2">{cat.title}</h3>
+                                <p className="text-[0.85rem] text-apple-muted mb-8">{cat.tags.length} Technologies mastered</p>
+
+                                <div className="flex flex-wrap gap-2">
+                                    {cat.tags.map((t) => (
+                                        <span
+                                            key={t.label}
+                                            className="px-3.5 py-1.5 rounded-full text-[0.8rem] font-medium bg-apple-pill-bg text-apple-pill-fg border border-apple-border hover:border-apple-accent transition-all cursor-default"
+                                        >
+                                            {t.label}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}
+
+/* ═══════════════════════════════════════
+   CYBERSECURITY / HACKER / RED TEAM — Skills
+═══════════════════════════════════════ */
+function SkillsHacker() {
+    return (
+        <section id="skills" className="py-24 relative bg-[var(--hacker-bg)] text-white font-mono overflow-hidden">
+            <div className="w-[min(1200px,92vw)] mx-auto">
+                <div className="mb-14 border-b border-[var(--hacker-border)] pb-4 flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                        <div className="text-[0.72rem] text-[var(--hacker-accent)] uppercase tracking-[0.2em] font-bold">
+                            {'// CAPABILITIES & ARSENAL'}
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white mt-1">
+                            Offensive & Defensive Stack <span className="text-[var(--hacker-secondary)]">[PAYLOADS]</span>
+                        </h2>
                     </div>
+                    <div className="text-xs text-[var(--hacker-accent)] font-mono">
+                        LOADED_MODULES: 4/4 [ACTIVE]
+                    </div>
+                </div>
+
+                {/* Skill Categories */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {CATEGORIES.map((cat, idx) => (
+                        <div key={cat.title} className="hacker-card p-6 flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-center justify-between text-xs text-[var(--hacker-secondary)] mb-3 pb-2 border-b border-[var(--hacker-border)]/40">
+                                    <span>MOD_0{idx + 1}</span>
+                                    <span className="font-bold">{cat.title.toUpperCase()}</span>
+                                </div>
+                                <ul className="space-y-2 mt-4">
+                                    {cat.tags.map((skill) => (
+                                        <li key={skill.label} className="flex items-center gap-2 text-xs text-text-secondary">
+                                            <span className="text-[var(--hacker-accent)]">›</span>
+                                            <span>{skill.label}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="mt-6 pt-3 border-t border-[var(--hacker-border)]/30 text-[0.65rem] text-text-muted">
+                                STATUS: VERIFIED_INTEGRITY
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

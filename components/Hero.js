@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, Fragment } from 'react';
 import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
+import IndicCrackers from '@/components/IndicCrackers';
 
 const PHRASES = [
     'elegant web apps.',
@@ -117,6 +118,8 @@ export default function Hero() {
     if (design === 'cod') return <HeroCod />;
     if (design === 'modern') return <HeroModern />;
     if (design === 'indic') return <HeroIndic />;
+    if (design === 'apple') return <HeroApple />;
+    if (design === 'hacker') return <HeroHacker />;
     return <HeroAurora />;
 }
 
@@ -124,45 +127,277 @@ export default function Hero() {
    INDIC — Heritage centered layout
  ═══════════════════════════════════════ */
 function HeroIndic() {
+    const { theme } = useTheme();
     const handleScroll = (e, href) => {
         e.preventDefault();
         document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
+    // Festival specific badges and motifs
+    const getFestivalData = () => {
+        switch (theme) {
+            case 'diwali':
+                return {
+                    greeting: 'शुभ दीपावली • FESTIVAL OF LIGHTS',
+                    headlineSuffix: 'Illuminating Digital Realities',
+                    desc: 'Dedicated to the craft of engineering — weaving scalable architectures, robust microservices, and radiant experiences with precision and devotion.',
+                    motif: (
+                        <div className="flex items-center justify-center gap-3 text-2xl mb-4 text-[#FFD700]">
+                            <span>🪔</span>
+                            <span className="w-12 h-[1px] bg-[#FFD700]/50" />
+                            <span>✨</span>
+                            <span className="w-12 h-[1px] bg-[#FFD700]/50" />
+                            <span>🪔</span>
+                        </div>
+                    ),
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="185" stroke="#FFD700" strokeWidth="0.8" strokeDasharray="6 6" />
+                            <circle cx="200" cy="200" r="140" stroke="#FF9933" strokeWidth="1" />
+                            <circle cx="200" cy="200" r="95" stroke="#FFD700" strokeWidth="0.6" />
+                            {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((deg) => (
+                                <g key={deg} transform={`rotate(${deg}, 200, 200)`}>
+                                    <path d="M200 15 C195 45, 190 70, 200 95 C210 70, 205 45, 200 15 Z" stroke="#FFD700" strokeWidth="0.75" />
+                                    <circle cx="200" cy="15" r="3" fill="#FF9933" />
+                                </g>
+                            ))}
+                        </svg>
+                    )
+                };
+            case 'holi':
+                return {
+                    greeting: 'रंगोत्सव होली • FESTIVAL OF COLORS',
+                    headlineSuffix: 'Vibrant Full Stack Craftsmanship',
+                    desc: 'Infusing digital architecture with the joy of vibrant colors — full stack engineering, reactive interfaces, and scalable backend infrastructure.',
+                    motif: (
+                        <div className="flex items-center justify-center gap-3 text-2xl mb-4 text-[#FF1493]">
+                            <span>🎨</span>
+                            <span className="w-12 h-[2px] bg-gradient-to-r from-[#FF1493] via-[#7C4DFF] to-[#00E5FF]" />
+                            <span>🌸</span>
+                            <span className="w-12 h-[2px] bg-gradient-to-r from-[#00E5FF] via-[#76FF03] to-[#FFEB3B]" />
+                            <span>💦</span>
+                        </div>
+                    ),
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="180" stroke="#E040FB" strokeWidth="1" strokeDasharray="8 8" />
+                            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => (
+                                <g key={deg} transform={`rotate(${deg}, 200, 200)`}>
+                                    <circle cx="200" cy="40" r="14" fill={['#FF1493', '#00E5FF', '#FFEB3B', '#76FF03'][i % 4]} fillOpacity="0.25" />
+                                    <path d="M200 60 Q215 120, 200 180" stroke="#7C4DFF" strokeWidth="0.8" />
+                                </g>
+                            ))}
+                        </svg>
+                    )
+                };
+            case 'dussehra':
+                return {
+                    greeting: 'विजयदशमी दशहरा • VICTORY OF LIGHT & TRUTH',
+                    headlineSuffix: 'Precision, Valor & Engineering',
+                    desc: 'Vanqishing technical debt with the golden arrow of pure architecture. Unbreakable distributed systems and unyielding performance.',
+                    motif: (
+                        <div className="flex items-center justify-center gap-3 text-2xl mb-4 text-[#FFB300]">
+                            <span>🏹</span>
+                            <span className="w-14 h-[1.5px] bg-[#FFB300]/60" />
+                            <span>🔥</span>
+                            <span className="w-14 h-[1.5px] bg-[#FFB300]/60" />
+                            <span>🚩</span>
+                        </div>
+                    ),
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="200,10 390,200 200,390 10,200" stroke="#FFB300" strokeWidth="1.2" />
+                            <polygon points="200,45 355,200 200,355 45,200" stroke="#D50000" strokeWidth="0.8" strokeDasharray="5 5" />
+                            {[0, 90, 180, 270].map((deg) => (
+                                <g key={deg} transform={`rotate(${deg}, 200, 200)`}>
+                                    <line x1="200" y1="10" x2="200" y2="190" stroke="#FF6D00" strokeWidth="1" />
+                                    <polygon points="200,5 206,20 194,20" fill="#FFB300" />
+                                </g>
+                            ))}
+                        </svg>
+                    )
+                };
+            case 'chhath':
+                return {
+                    greeting: 'जय छठी मइया • CHHATH PUJA SURYA ARGHYA',
+                    headlineSuffix: 'Radiant Engineering & Pure Devotion',
+                    desc: 'Salutations to the rising and setting cosmic energy. Engineering systems with pristine clarity, unwavering endurance, and natural purity.',
+                    motif: (
+                        <div className="flex items-center justify-center gap-3 text-2xl mb-4 text-[#E65100]">
+                            <span>☀️</span>
+                            <span className="w-12 h-[2px] bg-[#E65100]/50" />
+                            <span>🌊</span>
+                            <span className="w-12 h-[2px] bg-[#E65100]/50" />
+                            <span>🪔</span>
+                        </div>
+                    ),
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="175" stroke="#E65100" strokeWidth="1" strokeDasharray="4 4" />
+                            <circle cx="200" cy="200" r="120" stroke="#FF8F00" strokeWidth="1.2" />
+                            <circle cx="200" cy="200" r="60" fill="#FF8F00" fillOpacity="0.08" stroke="#E65100" strokeWidth="1" />
+                            {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5].map((deg) => (
+                                <line key={deg} x1="200" y1="130" x2="200" y2="170" transform={`rotate(${deg}, 200, 200)`} stroke="#FFB300" strokeWidth="1.5" />
+                            ))}
+                        </svg>
+                    )
+                };
+            case 'raksha-bandhan':
+                return {
+                    greeting: 'शुभ रक्षाबंधन • SACRED THREAD OF TRUST',
+                    headlineSuffix: 'Secure Bonds & Reliable Architectures',
+                    desc: 'Weaving the sacred thread of unshakeable reliability, fault-tolerant data security, and lifelong software integrity.',
+                    motif: (
+                        <div className="flex items-center justify-center gap-3 text-2xl mb-4 text-[#D81B60]">
+                            <span>🧵</span>
+                            <span className="w-14 h-[1.5px] border-b-2 border-dashed border-[#D81B60]" />
+                            <span>🌺</span>
+                            <span className="w-14 h-[1.5px] border-b-2 border-dashed border-[#D81B60]" />
+                            <span>✨</span>
+                        </div>
+                    ),
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="180" stroke="#C2185B" strokeWidth="1" strokeDasharray="5 5" />
+                            <circle cx="200" cy="200" r="135" stroke="#FFD700" strokeWidth="0.8" />
+                            <circle cx="200" cy="200" r="80" stroke="#D81B60" strokeWidth="1.5" />
+                            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                                <g key={deg} transform={`rotate(${deg}, 200, 200)`}>
+                                    <ellipse cx="200" cy="95" rx="14" ry="26" stroke="#D81B60" strokeWidth="0.8" fill="#D81B60" fillOpacity="0.05" />
+                                    <circle cx="200" cy="95" r="4" fill="#FFD700" />
+                                </g>
+                            ))}
+                        </svg>
+                    )
+                };
+            default:
+                return {
+                    greeting: 'नमस्ते • VEDIC HERITAGE',
+                    headlineSuffix: 'Full Stack Developer & Craftsman',
+                    desc: 'Dedicated to the craft of engineering — weaving scalable architectures, robust microservices, and elegant web interfaces with precision and devotion.',
+                    motif: null,
+                    svgPattern: (
+                        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="190" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+                            <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" />
+                            <path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" />
+                            {[45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                                <g key={deg} transform={`rotate(${deg}, 200, 200)`}><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
+                            ))}
+                        </svg>
+                    )
+                };
+        }
+    };
+
+    const festivalData = getFestivalData();
+
+    const isChhath = theme === 'chhath';
+    const isFestival = ['diwali', 'holi', 'dussehra', 'chhath', 'raksha-bandhan'].includes(theme);
+
     return (
         <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-            {/* Mandala Background */}
+            {/* Interactive Festive Celebration Canvas */}
+            <IndicCrackers />
+
+            {/* Chhath Puja: Atmospheric Golden Surya Bloom */}
+            {isChhath && (
+                <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+                    {/* Concentric Golden Surya Bloom & Core */}
+                    <div className="fx-sun-bloom" />
+                    <div className="fx-sun-glow" />
+                    <div className="fx-sun-core" />
+                </div>
+            )}
+
+            {/* Dynamic Festival Mandala Background */}
             <div className="mandala-container">
-                <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="200" cy="200" r="190" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
-                    <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" />
-                    <path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" />
-                    <g transform="rotate(45, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(90, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(135, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(180, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(225, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(270, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                    <g transform="rotate(315, 200, 200)"><path d="M200 10 L210 50 M200 10 L190 50" stroke="currentColor" strokeWidth="1" /></g>
-                </svg>
+                {festivalData.svgPattern}
             </div>
 
-            <div className="relative z-10 max-w-[900px]">
-                <div className="mb-6">
-                    <span className="text-indic-saffron font-bold tracking-[0.3em] uppercase text-sm block mb-4">नमस्ते</span>
+            <div className="relative z-10 max-w-[920px] flex flex-col items-center">
+                {/* Traditional Festive Portrait & Sacred Festival Emblem Duo */}
+                <div className="relative mb-6 flex items-center justify-center gap-4 sm:gap-6">
+                    {/* 1. Ornate Festival Celebration Sacred Artwork (Only shown on festival themes) */}
+                    {isFestival && (
+                        <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl p-1 bg-gradient-to-tr from-[var(--indic-saffron)] via-[var(--indic-border)] to-[var(--indic-terracotta)] shadow-[0_8px_30px_rgba(255,153,51,0.3)] transition transform hover:scale-105">
+                            <div className="w-full h-full rounded-[14px] overflow-hidden border border-[var(--indic-border)] bg-[var(--indic-bg)] flex items-center justify-center">
+                                <img
+                                    src={
+                                        theme === 'diwali' ? '/assets/festivals/diwali.svg' :
+                                        theme === 'holi' ? '/assets/festivals/holi.svg' :
+                                        theme === 'dussehra' ? '/assets/festivals/dussehra.svg' :
+                                        theme === 'chhath' ? '/assets/festivals/chhath.svg' :
+                                        theme === 'raksha-bandhan' ? '/assets/festivals/raksha-bandhan.svg' :
+                                        '/assets/festivals/diwali.svg'
+                                    }
+                                    alt={festivalData.greeting}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[var(--indic-bg)] border border-[var(--indic-border)] shadow-md text-[0.65rem] font-serif text-[var(--indic-saffron)] font-bold whitespace-nowrap">
+                                {theme === 'diwali' ? '🪔 दीप पर्व' :
+                                 theme === 'holi' ? '🎨 रंग पर्व' :
+                                 theme === 'dussehra' ? '🏹 विजय पर्व' :
+                                 theme === 'chhath' ? '☀️ छठ महापर्व' :
+                                 theme === 'raksha-bandhan' ? '🧵 रक्षा पर्व' : '𑁍 उत्सव'}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* 2. Personal Portrait Frame */}
+                    <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-tr from-[var(--indic-border)] via-[var(--indic-saffron)] to-[var(--indic-terracotta)] shadow-[0_8px_30px_rgba(255,153,51,0.25)] transition transform hover:scale-105">
+                        <div className="w-full h-full rounded-full overflow-hidden border-2 border-[var(--indic-border)] bg-[var(--indic-bg)]">
+                            <Image
+                                src="/assets/avatar.png"
+                                alt="Chitranjan Kumar Gupta"
+                                width={180}
+                                height={180}
+                                priority
+                                className="object-cover w-full h-full"
+                            />
+                        </div>
+                        <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-[var(--indic-bg)] border border-[var(--indic-border)] shadow-md text-[0.65rem] font-serif text-[var(--indic-terracotta)] font-bold whitespace-nowrap">
+                            <span>CKG</span>
+                        </div>
+                    </div>
                 </div>
 
-                <h1 className="text-[clamp(3rem,8vw,6rem)] font-bold mb-8 leading-tight">
-                    Crafting <span className="indic-gradient-text">Excellence</span> <br />
-                    Through Modern Heritage.
-                </h1>
+                {festivalData.motif}
 
-                <p className="text-[clamp(1rem,2vw,1.3rem)] text-opacity-80 max-w-[600px] mx-auto mb-12 font-medium italic">
-                    I bridge the gap between tradition and technology, building high-performance
-                    digital experiences with an Indian soul.
+                {/* Eyebrow / Aura Pill */}
+                <div className="mb-4">
+                    {isChhath ? (
+                        <div className="chhath-aura-badge">
+                            <div className="chhath-aura-glow" />
+                            <span className="text-[var(--indic-saffron)] font-bold tracking-[0.25em] uppercase text-xs sm:text-sm">
+                                {festivalData.greeting}
+                            </span>
+                        </div>
+                    ) : (
+                        <span className="text-indic-saffron font-bold tracking-[0.25em] uppercase text-xs sm:text-sm block">
+                            {festivalData.greeting}
+                        </span>
+                    )}
+                </div>
+
+                {/* Main Hero Headline */}
+                <h1 className={`text-[clamp(2.6rem,6.5vw,5.2rem)] font-extrabold mb-1 leading-tight font-serif tracking-tight ${isChhath ? 'chhath-hero-title' : ''}`}>
+                    Chitranjan Kumar Gupta
+                </h1>
+                <div className="text-sm md:text-base font-semibold tracking-wider text-indic-saffron mb-3 opacity-90">
+                    चितरंजन कुमार गुप्ता &bull; Bihar, India
+                </div>
+
+                <p className={`text-[clamp(1.15rem,2vw,1.6rem)] font-semibold mb-6 italic ${isChhath ? 'chhath-river-text' : 'text-indic-terracotta'}`}>
+                    {festivalData.headlineSuffix}
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <p className="text-[clamp(0.95rem,1.8vw,1.15rem)] text-indic-fg/80 max-w-[680px] mx-auto mb-10 font-medium italic leading-relaxed">
+                    {festivalData.desc}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
                     <a href="#projects" onClick={(e) => handleScroll(e, '#projects')}
                         className="btn-indic">
                         दर्शन projects
@@ -220,7 +455,7 @@ function HeroAurora() {
                         className="bg-gradient-text bg-clip-text"
                         style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}
                     >
-                        Chitranjan
+                        Chitranjan Kumar Gupta
                     </span>
                 </h1>
 
@@ -230,8 +465,8 @@ function HeroAurora() {
                 </h2>
 
                 <p className="text-[1.05rem] text-text-secondary leading-[1.8] max-w-[520px] mx-auto md:mx-0">
-                    Full Stack Developer crafting high-performance web experiences with React, Node.js, and modern
-                    cloud infrastructure. Passionate about clean code, intuitive UX, and scalable systems.
+                    A passionate Full Stack Developer and creator from Bihar, India. Engineering performant web applications,
+                    React Native mobile apps, browser extensions, and serverless edge solutions with Next.js, Node.js, and Cloudflare.
                 </p>
 
                 <div className="flex gap-4 flex-wrap justify-center md:justify-start">
@@ -256,9 +491,9 @@ function HeroAurora() {
 
                 <div className="flex items-center gap-6 pt-2 justify-center md:justify-start">
                     {[
-                        { num: '3+', label: 'Years Exp.' },
-                        { num: '20+', label: 'Projects' },
-                        { num: '10+', label: 'Clients' },
+                        { num: '1.6', label: 'Years Exp.' },
+                        { num: '15+', label: 'Projects' },
+                        { num: '4+', label: 'Extensions' },
                     ].map(({ num, label }, i) => (
                         <Fragment key={num}>
                             {i > 0 && <div className="w-px h-9 bg-[rgba(255,255,255,0.08)]" />}
@@ -408,9 +643,9 @@ function HeroTron() {
                             </div>
                             {/* Stats as terminal readout */}
                             <div className="font-mono text-[0.7rem] text-text-muted space-y-1 text-center">
-                                <div><span className="text-accent-1">EXP:</span> 3+ YRS</div>
-                                <div><span className="text-accent-1">BUILDS:</span> 20+</div>
-                                <div><span className="text-accent-1">CLIENTS:</span> 10+</div>
+                                <div><span className="text-accent-1">PROJECTS:</span> 12+</div>
+                                <div><span className="text-accent-1">EXTENSIONS:</span> 4</div>
+                                <div><span className="text-accent-1">CORP:</span> TCS</div>
                             </div>
                         </div>
                     </div>
@@ -467,9 +702,9 @@ function HeroAres() {
                     {/* Stats — giant raw numbers */}
                     <div className="flex gap-8 items-end md:justify-end">
                         {[
-                            { num: '3+', label: 'YEARS' },
-                            { num: '20+', label: 'PROJECTS' },
-                            { num: '10+', label: 'CLIENTS' },
+                            { num: '12+', label: 'PROJECTS' },
+                            { num: '4', label: 'EXTENSIONS' },
+                            { num: 'TCS', label: 'ENTERPRISE' },
                         ].map(({ num, label }) => (
                             <div key={label} className="text-center">
                                 <span className="block text-[3.5rem] font-black leading-none text-accent-1">{num}</span>
@@ -567,8 +802,8 @@ function HeroCod() {
                                 {[
                                     { label: 'CALLSIGN', value: 'CKG' },
                                     { label: 'RANK', value: 'FULL STACK DEV' },
-                                    { label: 'OPERATIONS', value: '20+' },
-                                    { label: 'SERVICE', value: '3+ YEARS' },
+                                    { label: 'PROJECTS', value: '12+' },
+                                    { label: 'CORP / ORG', value: 'TCS' },
                                 ].map(({ label, value }) => (
                                     <div key={label} className="py-2 border-b border-[color-mix(in_srgb,var(--accent-1)_25%,transparent)]">
                                         <div className="font-mono text-[0.55rem] tracking-[0.2em] text-text-muted uppercase">{label}</div>
@@ -579,7 +814,7 @@ function HeroCod() {
 
                             {/* Mission brief */}
                             <div className="mb-6">
-                                <div className="font-mono text-[0.6rem] tracking-[0.2em] text-accent-1 uppercase mb-2">// CURRENT MISSION</div>
+                                <div className="font-mono text-[0.6rem] tracking-[0.2em] text-accent-1 uppercase mb-2">{'// CURRENT MISSION'}</div>
                                 <p className="text-[0.9rem] text-text-secondary leading-[1.7] font-mono min-h-[1.5rem]">
                                     Building <span className="text-accent-1">{typed}</span>
                                     <span className="inline-block w-2 h-4 bg-accent-1 animate-blink ml-1 align-middle" />
@@ -637,23 +872,26 @@ function HeroModern() {
                 <div className="mb-12 flex justify-center">
                     <div className="geist-badge bg-[var(--accent-2)]/5 text-[var(--accent-2)] border-[var(--accent-2)]/20 px-4 py-1.5 rounded-full flex items-center gap-2 font-bold text-[0.85rem] tracking-tight">
                         <span className="flex w-2 h-2 rounded-full bg-[var(--accent-2)] animate-pulse" />
-                        Next.js 15 Stable
+                        Available for opportunities
                     </div>
                 </div>
 
-                <h1 className="hero-title mb-10">
-                    Your Vision. <br /> Delivered <span className="text-[var(--accent-2)]">Modern</span>.
+                <h1 className="hero-title mb-8">
+                    Chitranjan Kumar Gupta
                 </h1>
 
-                <p className="hero-sub mx-auto mb-16 font-medium">
-                    I build high-performance, accessible, and delightful web experiences
-                    using the latest modern frameworks and design patterns.
+                <p className="text-[clamp(1.3rem,2.5vw,2rem)] font-bold tracking-tight text-geist-foreground mb-6">
+                    Full Stack Developer & Software Engineer
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <p className="hero-sub mx-auto mb-14 font-medium">
+                    Crafting high-performance web applications, scalable microservices, and pixel-perfect digital experiences with React, Node.js, and cloud platforms.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
                     <a href="#projects" onClick={(e) => handleScroll(e, '#projects')}
                         className="btn-vercel">
-                        View Showcase
+                        View Projects
                     </a>
                     <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}
                         className="modern-btn-secondary px-8 py-3.5 border-geist-gray-200 text-geist-foreground font-bold hover:bg-geist-gray-100 transition-all rounded-lg">
@@ -664,6 +902,227 @@ function HeroModern() {
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20 pointer-events-none">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5" /></svg>
+            </div>
+        </section>
+    );
+}
+
+/* ═══════════════════════════════════════
+   APPLE — Cupertino Keynote Hero (VisionOS & Apple Intelligence)
+═══════════════════════════════════════ */
+function HeroApple() {
+    const handleScroll = (e, href) => {
+        e.preventDefault();
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    return (
+        <section id="hero" className="apple-hero relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 px-6 overflow-hidden">
+            {/* Apple Intelligence Multi-Color Fluid Glow */}
+            <div className="apple-intelligence-glow" />
+
+            {/* Top Product Hero Intro */}
+            <div className="relative z-10 max-w-[1050px] flex flex-col items-center text-center">
+                {/* Artificial Intelligence Aura Badge */}
+                <div className="apple-intelligence-badge mb-6">
+                    <span className="apple-intelligence-ring" />
+                    <span>Artificial Intelligence Ready</span>
+                    <span className="text-apple-muted">•</span>
+                    <span className="text-[0.8rem] font-normal text-apple-body">Available for Work</span>
+                </div>
+
+                <div className="text-[0.85rem] md:text-[0.95rem] font-semibold text-apple-accent tracking-widest uppercase mb-3">
+                    Developer & Systems Architect
+                </div>
+
+                {/* Massive Typographic Hero Headline */}
+                <h1 className="apple-hero-headline mb-3">
+                    Chitranjan Kumar Gupta.
+                </h1>
+
+                <h2 className="text-[clamp(1.6rem,3.8vw,2.8rem)] font-bold tracking-tight mb-6">
+                    <span className="apple-gradient-headline">Pro performance. Pure craft.</span>
+                </h2>
+
+                <p className="apple-hero-desc max-w-[640px] mx-auto mb-8 text-[1.05rem]">
+                    Engineered from the silicon up. Crafting ultra-responsive web applications, scalable distributed microservices, and fluid spatial experiences with React and Node.js.
+                </p>
+
+                {/* Apple Call to Action buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+                    <a href="#projects" onClick={(e) => handleScroll(e, '#projects')}
+                        className="apple-btn-primary">
+                        View Projects
+                        <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </a>
+                    <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}
+                        className="apple-btn-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+
+                {/* Key Spec Stats Bar at Bottom */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-[800px] pt-6 border-t border-apple-border text-center">
+                    <div>
+                        <div className="text-[1.8rem] font-bold text-apple-heading tracking-tight leading-none mb-1">1.6 Yrs</div>
+                        <div className="text-[0.7rem] font-medium text-apple-muted uppercase tracking-wider">Enterprise Exp</div>
+                    </div>
+                    <div>
+                        <div className="text-[1.8rem] font-bold text-apple-heading tracking-tight leading-none mb-1">20+</div>
+                        <div className="text-[0.7rem] font-medium text-apple-muted uppercase tracking-wider">Apps Shipped</div>
+                    </div>
+                    <div>
+                        <div className="text-[1.8rem] font-bold text-apple-accent tracking-tight leading-none mb-1">100%</div>
+                        <div className="text-[0.7rem] font-medium text-apple-muted uppercase tracking-wider">Client Sat</div>
+                    </div>
+                    <div>
+                        <div className="text-[1.8rem] font-bold text-apple-heading tracking-tight leading-none mb-1">99.9%</div>
+                        <div className="text-[0.7rem] font-medium text-apple-muted uppercase tracking-wider">System Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+/* ═══════════════════════════════════════
+   CYBERSECURITY / HACKER / RED TEAM
+   C2 Interactive Terminal & Exploit Payload Telemetry
+═══════════════════════════════════════ */
+function HeroHacker() {
+    const handleScroll = (e, href) => {
+        e.preventDefault();
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const terminalLogs = [
+        '[*] Initializing RedTeam C2 Framework v4.9.2-RELEASE...',
+        '[+] Target architecture: x86_64-gnu-linux :: MEM_MAP: 0x7FFF5FBFF000',
+        '[+] Privilege Escalation Vector: CAP_SYS_ADMIN bypass verified',
+        '[+] Threat Actor ID: CHITRANJAN_KUMAR_GUPTA [OPERATIONAL]',
+        '[*] Specialization: Application Security, Full-Stack Exploitation, Zero-Day Hardening',
+        '[>] Command listener active on 0.0.0.0:4444 (ESTABLISHED)',
+    ];
+
+    return (
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-16 px-4 md:px-8 overflow-hidden font-mono">
+            {/* Background Memory Matrix Grid */}
+            <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden text-[0.65rem] text-[var(--hacker-accent)] select-none">
+                <div className="p-4 leading-relaxed font-mono whitespace-pre">
+                    {`0x00007FFF  48 89 E5 48 83 EC 20 48 89 7D E8 48 89 75 E0 48  H..H.. H.}dH.u`}<br />
+                    {`0x00007F10  8B 45 E8 48 8B 00 48 8B 40 18 48 8B 7D E0 FF D0  .E.H..H.@.H.}.`}<br />
+                    {`0x00007F20  89 45 FC 83 7D FC 00 74 12 48 8D 3D 45 12 00 00  .E..}..t.H.=E..`}<br />
+                    {`0x00007F30  E8 A4 FE FF FF B8 01 00 00 00 EB 0A B8 00 00 00  ...............`}
+                </div>
+            </div>
+
+            <div className="relative z-10 w-full max-w-[1050px]">
+                {/* Cyber Security Status Header */}
+                <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-black/60 border border-[var(--hacker-border)] rounded-t-lg backdrop-blur-md mb-0 text-xs">
+                    <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block animate-pulse" />
+                        <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
+                        <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
+                        <span className="ml-2 font-bold text-[var(--hacker-accent)] tracking-wider">
+                            ROOT@CKG-C2:~# ./payload.elf --elevate
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-3 text-[0.7rem] text-text-muted">
+                        <span className="px-2 py-0.5 rounded bg-[var(--hacker-accent)]/15 text-[var(--hacker-accent)] font-bold border border-[var(--hacker-accent)]/30">
+                            DEFCON 1
+                        </span>
+                        <span className="hidden sm:inline">SHA256: 9e107d9d372bb6826bd81d3542a419d6</span>
+                    </div>
+                </div>
+
+                {/* Main Interactive Terminal Pane */}
+                <div className="p-6 md:p-8 bg-[var(--hacker-panel)] border-x border-b border-[var(--hacker-border)] rounded-b-lg shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        {/* Terminal Telemetry Logs */}
+                        <div className="lg:col-span-8">
+                            <div className="text-xs text-[var(--hacker-accent)] mb-4 space-y-1 font-mono">
+                                {terminalLogs.map((log, idx) => (
+                                    <div key={idx} className="leading-relaxed opacity-90">{log}</div>
+                                ))}
+                            </div>
+
+                            <div className="my-6 border-t border-[var(--hacker-border)]/40 pt-4">
+                                <h1 className="text-[clamp(2.2rem,5vw,3.8rem)] font-extrabold tracking-tight text-white mb-2 uppercase leading-none">
+                                    Chitranjan <span className="text-[var(--hacker-accent)]">Kumar Gupta</span>
+                                </h1>
+                                <p className="text-base md:text-lg text-[var(--hacker-secondary)] font-bold tracking-wide mb-4">
+                                    Full-Stack Engineer & Offensive Security Architect
+                                </p>
+                                <p className="text-sm text-text-secondary leading-relaxed max-w-[650px] mb-6">
+                                    Hardening mission-critical web applications from the inside out. Specialist in secure full-stack development, zero-day threat modeling, penetration testing, and bulletproof microservice architectures.
+                                </p>
+                            </div>
+
+                            {/* C2 Command CTAs */}
+                            <div className="flex flex-wrap gap-4 items-center">
+                                <a href="#projects" onClick={(e) => handleScroll(e, '#projects')}
+                                    className="btn-hacker-primary">
+                                    <span>☠ EXECUTE_PROJECTS()</span>
+                                </a>
+                                <a href="#contact" onClick={(e) => handleScroll(e, '#contact')}
+                                    className="btn-hacker-secondary">
+                                    <span>ENCRYPTED_COMMS</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {/* Operative Portrait Frame with Target Crosshair Reticle */}
+                        <div className="lg:col-span-4 flex flex-col items-center">
+                            <div className="relative w-48 h-48 md:w-56 md:h-56 p-1 border-2 border-[var(--hacker-accent)] bg-black shadow-[0_0_25px_var(--hacker-glow)]">
+                                {/* Corner Reticles */}
+                                <div className="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-[var(--hacker-secondary)]" />
+                                <div className="absolute -top-1.5 -right-1.5 w-4 h-4 border-t-2 border-r-2 border-[var(--hacker-secondary)]" />
+                                <div className="absolute -bottom-1.5 -left-1.5 w-4 h-4 border-b-2 border-l-2 border-[var(--hacker-secondary)]" />
+                                <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 border-b-2 border-r-2 border-[var(--hacker-secondary)]" />
+
+                                <div className="w-full h-full overflow-hidden relative grayscale contrast-125 hover:grayscale-0 transition duration-300">
+                                    <Image
+                                        src="/assets/avatar.png"
+                                        alt="CKG Operative"
+                                        width={240}
+                                        height={240}
+                                        priority
+                                        className="object-cover w-full h-full"
+                                    />
+                                    {/* Scanline Sweep Animation */}
+                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--hacker-accent)]/20 to-transparent pointer-events-none animate-pulse" />
+                                </div>
+
+                                <div className="absolute bottom-2 right-2 bg-black/90 px-2 py-0.5 border border-[var(--hacker-accent)] text-[0.62rem] text-[var(--hacker-accent)] font-bold">
+                                    TARGET: AUTH_OK
+                                </div>
+                            </div>
+                            <div className="mt-3 text-[0.68rem] text-text-muted text-center tracking-widest uppercase">
+                                CALLSIGN: <span className="text-[var(--hacker-accent)] font-bold">CKG_ROOT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Threat Intel Metrics Footer */}
+                    <div className="mt-8 pt-6 border-t border-[var(--hacker-border)]/50 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div className="p-3 bg-black/40 border border-[var(--hacker-border)]/30 rounded">
+                            <div className="text-[1.5rem] font-black text-[var(--hacker-accent)]">20+</div>
+                            <div className="text-[0.65rem] text-text-muted uppercase tracking-wider">Breaches Secured</div>
+                        </div>
+                        <div className="p-3 bg-black/40 border border-[var(--hacker-border)]/30 rounded">
+                            <div className="text-[1.5rem] font-black text-[var(--hacker-secondary)]">0-DAY</div>
+                            <div className="text-[0.65rem] text-text-muted uppercase tracking-wider">Exploit Hardening</div>
+                        </div>
+                        <div className="p-3 bg-black/40 border border-[var(--hacker-border)]/30 rounded">
+                            <div className="text-[1.5rem] font-black text-white">99.99%</div>
+                            <div className="text-[0.65rem] text-text-muted uppercase tracking-wider">C2 Uptime</div>
+                        </div>
+                        <div className="p-3 bg-black/40 border border-[var(--hacker-border)]/30 rounded">
+                            <div className="text-[1.5rem] font-black text-[var(--hacker-accent)]">256-BIT</div>
+                            <div className="text-[0.65rem] text-text-muted uppercase tracking-wider">AES Encryption</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

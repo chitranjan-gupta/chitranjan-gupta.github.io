@@ -782,10 +782,10 @@
 }
 
 /* 14 ── NAV LINKS: Monospace, neon on hover */
-[data-design="tron"] header a,
-[data-design="tron"] header button {
+[data-design="tron"] header nav a,
+[data-design="tron"] header nav button {
   font-family: var(--font-mono), monospace !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.02em !important;
 }
 
 /* 15 ── SKILL TAGS: Sharp neon rectangles */
@@ -2222,6 +2222,346 @@ body {
   --accent-2: var(--indic-terracotta);
 }
 
+/* 🪔 DIWALI — Festival of Lights */
+[data-design="indic"][data-theme="diwali"] {
+  --indic-bg: #0D0614;
+  --indic-fg: #FFF8E7;
+  --indic-border: #FFD700;
+  --indic-saffron: #FF9933;
+  --indic-terracotta: #FF7043;
+  --bg-primary: #0D0614;
+  --bg-secondary: #140A1E;
+  --text-primary: #FFF8E7;
+  --text-secondary: #FFD700;
+  --text-muted: #FFB74D;
+  --border: rgba(255, 215, 0, 0.45);
+  --accent-1: #FF9933;
+  --accent-2: #FFD700;
+}
+
+[data-design="indic"][data-theme="diwali"] body {
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 10% 80%, rgba(255, 153, 51, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 153, 51, 0.06) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 10 C35 25, 25 35, 10 40 C25 45, 35 55, 40 70 C45 55, 55 45, 70 40 C55 35, 45 25, 40 10 Z' fill='none' stroke='rgba(255,215,0,0.06)' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='3' fill='rgba(255,153,51,0.08)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+[data-design="indic"][data-theme="diwali"] .jaali-card {
+  background: rgba(20, 10, 30, 0.7);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0 4px 25px rgba(255, 215, 0, 0.08), inset 0 0 20px rgba(255, 153, 51, 0.05);
+  border-radius: 12px;
+}
+
+[data-design="indic"][data-theme="diwali"] .jaali-card:hover {
+  transform: translateY(-6px);
+  border-color: #FFD700;
+  box-shadow: 0 10px 40px rgba(255, 215, 0, 0.22), 0 0 25px rgba(255, 153, 51, 0.15);
+  background: rgba(28, 14, 42, 0.9);
+}
+
+[data-design="indic"][data-theme="diwali"] .btn-indic {
+  background: linear-gradient(135deg, #FF9933, #FFD700);
+  color: #140A1E;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  border-radius: 9999px;
+}
+
+/* 🎨 HOLI — Festival of Vibrant Colors (Gulal) */
+[data-design="indic"][data-theme="holi"] {
+  --indic-bg: #FFF5FB;
+  --indic-fg: #2A0845;
+  --indic-border: #E040FB;
+  --indic-saffron: #FF1493;
+  --indic-terracotta: #7C4DFF;
+  --bg-primary: #FFF5FB;
+  --bg-secondary: #FDE8F7;
+  --text-primary: #2A0845;
+  --text-secondary: #C2185B;
+  --text-muted: #7B1FA2;
+  --border: rgba(224, 64, 251, 0.35);
+  --accent-1: #FF1493;
+  --accent-2: #00E5FF;
+}
+
+[data-design="indic"][data-theme="holi"] body {
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(255, 20, 147, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(0, 229, 255, 0.09) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(255, 235, 59, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(118, 255, 3, 0.07) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='30' cy='30' r='14' fill='rgba(255,20,147,0.03)'/%3E%3Ccircle cx='90' cy='50' r='18' fill='rgba(0,229,255,0.03)'/%3E%3Ccircle cx='60' cy='100' r='12' fill='rgba(224,64,251,0.03)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+[data-design="indic"][data-theme="holi"] .jaali-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 10px 30px rgba(255, 20, 147, 0.08), 0 4px 15px rgba(0, 229, 255, 0.06);
+  border-radius: 20px;
+}
+
+[data-design="indic"][data-theme="holi"] .jaali-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 15px 45px rgba(255, 20, 147, 0.2), 0 5px 25px rgba(0, 229, 255, 0.2);
+  border-color: #E040FB;
+}
+
+[data-design="indic"][data-theme="holi"] .btn-indic {
+  background: linear-gradient(135deg, #FF1493, #7C4DFF, #00E5FF);
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+}
+
+/* 🏹 DUSSEHRA / VIJAYADASHAMI — Royal Saffron, Gold & Crimson */
+[data-design="indic"][data-theme="dussehra"] {
+  --indic-bg: #140804;
+  --indic-fg: #FFF8E8;
+  --indic-border: #FFB300;
+  --indic-saffron: #FF6D00;
+  --indic-terracotta: #D50000;
+  --bg-primary: #140804;
+  --bg-secondary: #1E0C06;
+  --text-primary: #FFF8E8;
+  --text-secondary: #FFB300;
+  --text-muted: #FF8F00;
+  --border: rgba(255, 179, 0, 0.45);
+  --accent-1: #FF6D00;
+  --accent-2: #D50000;
+}
+
+[data-design="indic"][data-theme="dussehra"] body {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 109, 0, 0.12) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M20 50 L50 20 L80 50 L50 80 Z' fill='none' stroke='rgba(255,179,0,0.05)' stroke-width='1.5'/%3E%3Cline x1='50' y1='10' x2='50' y2='90' stroke='rgba(213,0,0,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+[data-design="indic"][data-theme="dussehra"] .jaali-card {
+  background: rgba(26, 11, 5, 0.85);
+  border: 2px solid rgba(255, 179, 0, 0.4);
+  box-shadow: 0 4px 25px rgba(213, 0, 0, 0.15);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+[data-design="indic"][data-theme="dussehra"] .jaali-card:hover {
+  transform: translateY(-5px);
+  border-color: #FFB300;
+  box-shadow: 0 10px 40px rgba(255, 109, 0, 0.35);
+  background: rgba(36, 15, 7, 0.95);
+}
+
+[data-design="indic"][data-theme="dussehra"] .btn-indic {
+  background: linear-gradient(135deg, #FF6D00, #D50000);
+  color: #FFF;
+  border-radius: 4px;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  box-shadow: 0 4px 25px rgba(255, 109, 0, 0.45);
+}
+
+/* ☀️ CHHATH PUJA — Inspired by BiharInfraTales Sacred Ghat & Sun Bloom Architecture */
+[data-design="indic"][data-theme="chhath"] {
+  --indic-bg: #f8fafc;
+  --indic-fg: #1e293b;
+  --indic-border: #f59e0b;
+  --indic-saffron: #c2410c;
+  --indic-terracotta: #9a1b1b;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #1d4f7a; /* Holy River Ganges blue */
+  --text-muted: #64748b;
+  --border: rgba(245, 158, 11, 0.4);
+  --accent-1: #c2410c; /* Vermilion / Sindur orange */
+  --accent-2: #1d4f7a; /* River Ganga Blue */
+}
+
+[data-design="indic"][data-theme="chhath"] body {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9fc 25%, #e4f2f8 60%, #d1eaf4 100%) !important;
+  color: #1e293b !important;
+  background-attachment: fixed;
+}
+
+/* Atmospheric Sun Breathing Animations */
+@keyframes chhath-sun-glow-breathe {
+  0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.55; }
+  100% { transform: translate(-50%, -50%) scale(1.08); opacity: 0.85; }
+}
+
+@keyframes chhath-sun-bloom-expand {
+  0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.45; }
+  100% { transform: translate(-50%, -50%) scale(1.12); opacity: 0.7; }
+}
+
+@keyframes chhath-river-shimmer {
+  0% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(-15px) scaleY(1.04); }
+  100% { transform: translateX(0) scaleY(1); }
+}
+
+/* The Chhath Parallax Ghat Layer */
+[data-design="indic"][data-theme="chhath"] .chhath-ghat-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-mask-image: 
+    linear-gradient(90deg, transparent, #000 12% 88%, transparent),
+    linear-gradient(180deg, transparent 0%, #000 20% 85%, transparent 100%);
+  mask-image: 
+    linear-gradient(90deg, transparent, #000 12% 88%, transparent),
+    linear-gradient(180deg, transparent 0%, #000 20% 85%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+[data-design="indic"][data-theme="chhath"] .fx-sun-bloom {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  width: min(85vw, 680px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(255, 214, 140, 0.55) 0%, rgba(255, 200, 120, 0.28) 35%, rgba(255, 190, 110, 0.12) 65%, transparent 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: chhath-sun-bloom-expand 5s ease-in-out infinite alternate;
+}
+
+[data-design="indic"][data-theme="chhath"] .fx-sun-glow {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  width: min(55vw, 440px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(255, 236, 170, 0.85) 35%, rgba(255, 200, 110, 0.5) 60%, rgba(255, 170, 90, 0.2) 80%, transparent 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  animation: chhath-sun-glow-breathe 4.5s ease-in-out infinite alternate;
+}
+
+[data-design="indic"][data-theme="chhath"] .fx-sun-core {
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  width: min(28vw, 220px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, #ffffff 0%, #fffcec 40%, #ffecb4 70%, transparent 100%);
+  box-shadow: 0 0 60px rgba(255, 236, 170, 0.9), 0 0 120px rgba(255, 180, 50, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Vermilion & River Blue Headline Styling */
+[data-design="indic"][data-theme="chhath"] .chhath-hero-title {
+  background-size: 200% 100%;
+  background-image: linear-gradient(90deg, #9a1b1b, #c2410c 35%, #dc2626 60%, #9a1b1b) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+[data-design="indic"][data-theme="chhath"] .chhath-river-text {
+  color: #1d4f7a !important;
+}
+
+/* BiharInfraTales Soft Aura Eyebrow Pill */
+[data-design="indic"][data-theme="chhath"] .chhath-aura-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+}
+
+[data-design="indic"][data-theme="chhath"] .chhath-aura-glow {
+  position: absolute;
+  inset: -12px;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.25), rgba(253, 224, 71, 0.2), rgba(244, 63, 94, 0.25));
+  filter: blur(25px);
+  border-radius: 9999px;
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-design="indic"][data-theme="chhath"] .jaali-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(29, 79, 122, 0.08), 0 2px 10px rgba(194, 65, 12, 0.05);
+}
+
+[data-design="indic"][data-theme="chhath"] .jaali-card:hover {
+  transform: translateY(-5px);
+  border-color: #c2410c;
+  box-shadow: 0 16px 45px rgba(29, 79, 122, 0.14), 0 4px 18px rgba(194, 65, 12, 0.15);
+}
+
+[data-design="indic"][data-theme="chhath"] .btn-indic {
+  background: linear-gradient(135deg, #c2410c, #f59e0b);
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(194, 65, 12, 0.35);
+}
+
+/* 🧵 RAKSHA BANDHAN — Sacred Thread & Floral Silk (Deep Crimson & Golden Thread) */
+[data-design="indic"][data-theme="raksha-bandhan"] {
+  --indic-bg: #FFF8F9;
+  --indic-fg: #3B0918;
+  --indic-border: #C2185B;
+  --indic-saffron: #D81B60;
+  --indic-terracotta: #AD1457;
+  --bg-primary: #FFF8F9;
+  --bg-secondary: #FCE4EC;
+  --text-primary: #3B0918;
+  --text-secondary: #C2185B;
+  --text-muted: #880E4F;
+  --border: rgba(194, 24, 91, 0.3);
+  --accent-1: #D81B60;
+  --accent-2: #FFD700;
+}
+
+[data-design="indic"][data-theme="raksha-bandhan"] body {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(216, 27, 96, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.06) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Ccircle cx='45' cy='45' r='20' fill='none' stroke='rgba(194,24,91,0.06)' stroke-dasharray='4 4' stroke-width='1.5'/%3E%3Ccircle cx='45' cy='45' r='12' fill='none' stroke='rgba(255,215,0,0.06)' stroke-width='1'/%3E%3Ccircle cx='45' cy='45' r='3' fill='rgba(216,27,96,0.08)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+[data-design="indic"][data-theme="raksha-bandhan"] .jaali-card {
+  background: rgba(255, 248, 249, 0.95);
+  border: 2px dashed rgba(194, 24, 91, 0.4);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(216, 27, 96, 0.07);
+}
+
+[data-design="indic"][data-theme="raksha-bandhan"] .jaali-card:hover {
+  transform: translateY(-5px);
+  border: 2px solid #D81B60;
+  box-shadow: 0 12px 40px rgba(216, 27, 96, 0.2);
+}
+
+[data-design="indic"][data-theme="raksha-bandhan"] .btn-indic {
+  background: linear-gradient(135deg, #D81B60, #FFD700);
+  color: white;
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(216, 27, 96, 0.35);
+}
+
 [data-design="indic"][data-theme="lotus"] {
   --indic-bg: #001F3F;
   --indic-fg: #FDF5E6;
@@ -2328,3 +2668,784 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   ████████████████    APPLE / VISIONOS & APPLE INTELLIGENCE    ████████████████
+   Liquid glassmorphism, iridescent gradients, depth-layered bento,
+   SF Pro rounded geometry, and Apple Intelligence multi-color aura
+═══════════════════════════════════════════════════════════════════ */
+
+[data-design="apple"] {
+  --apple-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", -system-ui, sans-serif;
+  --apple-accent: #2997ff;
+  --apple-bg: #070709;
+  --apple-card-bg: rgba(255, 255, 255, 0.05);
+  --apple-border: rgba(255, 255, 255, 0.12);
+  --apple-border-top: rgba(255, 255, 255, 0.45);
+  --apple-heading: #ffffff;
+  --apple-body: rgba(255, 255, 255, 0.72);
+  --apple-muted: rgba(255, 255, 255, 0.45);
+  --apple-subtle: #8e8e93;
+  --apple-pill-bg: rgba(255, 255, 255, 0.08);
+  --apple-pill-fg: #ffffff;
+  --apple-icon-bg: rgba(255, 255, 255, 0.08);
+  --apple-input-bg: rgba(255, 255, 255, 0.04);
+  --apple-bar-bg: rgba(255, 255, 255, 0.12);
+
+  /* Global tokens map */
+  --bg-primary: #070709;
+  --bg-secondary: #0e0e12;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --accent-1: #2997ff;
+  --accent-2: #bf5af2;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.45);
+}
+
+/* 1. Apple Intelligence Theme (Siri Multi-color Liquid Aura) */
+[data-design="apple"][data-theme="apple-intelligence"] {
+  --apple-accent: #ff375f;
+  --apple-bg: #08030c;
+  --apple-card-bg: rgba(255, 255, 255, 0.06);
+  --apple-border: rgba(255, 255, 255, 0.15);
+  --apple-border-top: rgba(255, 100, 150, 0.55);
+  --apple-heading: #ffffff;
+  --apple-body: #e2d9e6;
+  --apple-muted: #aa98b2;
+  --apple-pill-bg: rgba(255, 55, 95, 0.12);
+  --accent-1: #ff375f;
+  --accent-2: #bf5af2;
+}
+
+/* 2. Natural Titanium Theme */
+[data-design="apple"][data-theme="apple-titanium"] {
+  --apple-accent: #d0c8b6;
+  --apple-bg: #0d0c0b;
+  --apple-card-bg: rgba(255, 255, 255, 0.05);
+  --apple-border: rgba(208, 200, 182, 0.15);
+  --apple-border-top: rgba(208, 200, 182, 0.45);
+  --apple-heading: #f5f2eb;
+  --apple-body: #b8b2a5;
+  --apple-muted: #857f73;
+  --apple-pill-bg: rgba(208, 200, 182, 0.08);
+  --accent-1: #d0c8b6;
+  --accent-2: #e5dfd3;
+}
+
+/* 3. Silver White Light Theme */
+[data-design="apple"][data-theme="apple-light"] {
+  --apple-accent: #0071e3;
+  --apple-bg: #f5f5f7;
+  --apple-card-bg: rgba(255, 255, 255, 0.65);
+  --apple-border: rgba(0, 0, 0, 0.08);
+  --apple-border-top: rgba(255, 255, 255, 0.95);
+  --apple-heading: #1d1d1f;
+  --apple-body: #515154;
+  --apple-muted: #86868b;
+  --apple-subtle: #6e6e73;
+  --apple-pill-bg: rgba(0, 0, 0, 0.04);
+  --apple-pill-fg: #1d1d1f;
+  --apple-icon-bg: rgba(0, 0, 0, 0.04);
+  --apple-input-bg: rgba(255, 255, 255, 0.5);
+  --apple-bar-bg: rgba(0, 0, 0, 0.06);
+
+  /* Global tokens map */
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.08);
+  --accent-1: #0071e3;
+  --accent-2: #5856d6;
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #86868b;
+}
+
+[data-design="apple"] body {
+  background-color: var(--apple-bg) !important;
+  color: var(--apple-heading) !important;
+  font-family: var(--apple-font) !important;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.018em;
+  position: relative;
+}
+
+/* Background Refractive Liquid Aura Meshes */
+[data-design="apple"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image: 
+    radial-gradient(circle at 18% 22%, rgba(41, 151, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 82% 35%, rgba(191, 90, 242, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 45% 75%, rgba(255, 55, 95, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 75% 85%, rgba(48, 176, 199, 0.14) 0%, transparent 45%);
+}
+
+[data-design="apple"][data-theme="apple-intelligence"] body::before {
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(255, 55, 95, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(191, 90, 242, 0.3) 0%, transparent 45%),
+    radial-gradient(circle at 50% 65%, rgba(41, 151, 255, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 25% 85%, rgba(255, 159, 10, 0.22) 0%, transparent 45%);
+}
+
+[data-design="apple"][data-theme="apple-light"] body::before {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(0, 113, 227, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(175, 82, 222, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, rgba(88, 86, 214, 0.1) 0%, transparent 50%);
+}
+
+/* Floating VisionOS Glass Header */
+[data-design="apple"] header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+[data-design="apple"] header nav {
+  background: rgba(30, 30, 35, 0.45) !important;
+  backdrop-filter: blur(48px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(48px) saturate(220%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 9999px !important;
+  padding: 8px 20px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-design="apple"][data-theme="apple-light"] header nav {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Apple Intelligence Floating Multicolored Fluid Glow */
+[data-design="apple"] .apple-intelligence-glow {
+  position: absolute;
+  top: -240px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1000px, 100vw);
+  max-width: 100%;
+  height: 700px;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 55, 95, 0.3), transparent 50%),
+              radial-gradient(circle at 70% 35%, rgba(191, 90, 242, 0.32), transparent 50%),
+              radial-gradient(circle at 50% 65%, rgba(41, 151, 255, 0.35), transparent 60%),
+              radial-gradient(circle at 20% 70%, rgba(255, 159, 10, 0.25), transparent 50%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  animation: appleAuraFloat 14s ease-in-out infinite alternate;
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-intelligence-glow {
+  background: radial-gradient(circle at 30% 40%, rgba(0, 113, 227, 0.2), transparent 50%),
+              radial-gradient(circle at 70% 35%, rgba(175, 82, 222, 0.18), transparent 50%),
+              radial-gradient(circle at 50% 65%, rgba(88, 86, 214, 0.16), transparent 60%);
+}
+
+@keyframes appleAuraFloat {
+  0% { transform: translateX(-50%) rotate(0deg) scale(0.95); }
+  50% { transform: translateX(-48%) rotate(8deg) scale(1.08); }
+  100% { transform: translateX(-52%) rotate(-6deg) scale(1.02); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TRUE LIQUID GLASS CARD (VisionOS Refraction, Noise & Specular)
+═══════════════════════════════════════════════════════════════════ */
+[data-design="apple"] .apple-card {
+  position: relative;
+  background: var(--apple-card-bg);
+  backdrop-filter: blur(50px) saturate(220%);
+  -webkit-backdrop-filter: blur(50px) saturate(220%);
+  border: 1px solid var(--apple-border);
+  border-top: 1px solid var(--apple-border-top);
+  border-radius: 32px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+  overflow: hidden;
+}
+
+/* Microscopic Optical Glass Noise Texture Overlay */
+[data-design="apple"] .apple-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.7;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* Specular Rim Sweep Highlight on Top */
+[data-design="apple"] .apple-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+[data-design="apple"] .apple-card:hover {
+  transform: translateY(-5px);
+  border-top-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-card {
+  box-shadow: 
+    0 24px 50px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-card:hover {
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* VisionOS Floating Device Mockup / Liquid Bezel */
+[data-design="apple"] .apple-device-frame {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 28px;
+  padding: 10px;
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Apple Intelligence Dynamic Aura Pill Badge */
+[data-design="apple"] .apple-intelligence-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--apple-heading);
+}
+
+[data-design="apple"] .apple-intelligence-ring {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #ff375f, #ff9f0a, #34c759, #30b0c7, #2997ff, #bf5af2, #ff375f);
+  animation: appleSpin 4s linear infinite;
+  box-shadow: 0 0 10px rgba(255, 55, 95, 0.6);
+}
+
+@keyframes appleSpin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Apple Pro Typography Hierarchy */
+[data-design="apple"] .apple-hero-headline {
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  color: var(--apple-heading);
+}
+
+[data-design="apple"] .apple-gradient-headline {
+  background: linear-gradient(180deg, #ffffff 30%, rgba(255, 255, 255, 0.45) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-gradient-headline {
+  background: linear-gradient(180deg, #1d1d1f 40%, #86868b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-design="apple"] .apple-hero-subheadline {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+[data-design="apple"] .apple-hero-desc {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--apple-body);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+[data-design="apple"] .apple-section-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--apple-accent);
+  margin-bottom: 0.85rem;
+}
+
+[data-design="apple"] .apple-section-title {
+  font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  color: var(--apple-heading);
+}
+
+/* VisionOS Pill Buttons */
+[data-design="apple"] .apple-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+[data-design="apple"] .apple-btn-primary:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-btn-primary {
+  background: #0071e3;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 113, 227, 0.35);
+}
+
+[data-design="apple"] .apple-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--apple-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-design="apple"] .apple-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.04);
+}
+
+[data-design="apple"][data-theme="apple-light"] .apple-btn-secondary {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-design="apple"] .apple-card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--apple-accent);
+}
+
+[data-design="apple"] .text-apple-subtle {
+  color: var(--apple-subtle);
+}
+
+[data-design="apple"] .text-apple-heading {
+  color: var(--apple-heading);
+}
+
+[data-design="apple"] .text-apple-body {
+  color: var(--apple-body);
+}
+
+[data-design="apple"] .text-apple-muted {
+  color: var(--apple-muted);
+}
+
+[data-design="apple"] .text-apple-accent {
+  color: var(--apple-accent);
+}
+
+[data-design="apple"] .border-apple-border {
+  border-color: var(--apple-border);
+}
+
+[data-design="apple"] .border-apple-accent {
+  border-color: var(--apple-accent);
+}
+
+[data-design="apple"] .bg-apple-pill-bg {
+  background-color: var(--apple-pill-bg);
+}
+
+[data-design="apple"] .bg-apple-icon-bg {
+  background-color: var(--apple-icon-bg);
+}
+
+[data-design="apple"] .bg-apple-input-bg {
+  background-color: var(--apple-input-bg);
+}
+
+[data-design="apple"] .bg-apple-bar-bg {
+  background-color: var(--apple-bar-bg);
+}
+
+[data-design="apple"] .bg-apple-accent {
+  background-color: var(--apple-accent);
+}
+
+[data-design="apple"] .text-apple-pill-fg {
+  color: var(--apple-pill-fg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ████████████████    CYBERSECURITY / HACKER / RED TEAM    ████████████████
+   C2 Operator Terminal, CRT phosphor scanlines, memory address offsets,
+   hex dumps, payload telemetry, and zero-day defense matrices.
+═══════════════════════════════════════════════════════════════════ */
+
+[data-design="hacker"] {
+  --hacker-font: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --hacker-bg: #07090e;
+  --hacker-panel: rgba(10, 14, 23, 0.92);
+  --hacker-border: rgba(0, 255, 65, 0.28);
+  --hacker-border-focus: #00ff41;
+  --hacker-accent: #00ff41; /* Black hat matrix green */
+  --hacker-secondary: #ff0033; /* Red team strike */
+  --hacker-text: #e2e8f0;
+  --hacker-muted: #64748b;
+  --hacker-glow: rgba(0, 255, 65, 0.35);
+
+  /* Global Token Mappings */
+  --bg-primary: var(--hacker-bg);
+  --bg-secondary: #04060a;
+  --bg-card: var(--hacker-panel);
+  --border: var(--hacker-border);
+  --border-hover: var(--hacker-border-focus);
+  --accent-1: var(--hacker-accent);
+  --accent-2: var(--hacker-secondary);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --font-mono: var(--hacker-font);
+}
+
+/* 🩸 RED TEAM OPS THEME */
+[data-design="hacker"][data-theme="redteam"] {
+  --hacker-bg: #0b0204;
+  --hacker-panel: rgba(18, 5, 8, 0.92);
+  --hacker-border: rgba(255, 0, 51, 0.3);
+  --hacker-border-focus: #ff0033;
+  --hacker-accent: #ff0033;
+  --hacker-secondary: #ff4d6d;
+  --hacker-glow: rgba(255, 0, 51, 0.35);
+  --accent-1: #ff0033;
+  --accent-2: #ff4d6d;
+  --border: rgba(255, 0, 51, 0.3);
+  --border-hover: #ff0033;
+}
+
+/* ☠ BLACK HAT ZERODAY THEME */
+[data-design="hacker"][data-theme="blackhat"] {
+  --hacker-bg: #030804;
+  --hacker-panel: rgba(5, 14, 7, 0.92);
+  --hacker-border: rgba(0, 255, 65, 0.3);
+  --hacker-border-focus: #00ff41;
+  --hacker-accent: #00ff41;
+  --hacker-secondary: #22c55e;
+  --hacker-glow: rgba(0, 255, 65, 0.4);
+  --accent-1: #00ff41;
+  --accent-2: #22c55e;
+  --border: rgba(0, 255, 65, 0.3);
+  --border-hover: #00ff41;
+}
+
+/* 🐉 KALI LINUX BLUE */
+[data-design="hacker"][data-theme="kali"] {
+  --hacker-bg: #030914;
+  --hacker-panel: rgba(5, 16, 32, 0.92);
+  --hacker-border: rgba(0, 210, 255, 0.3);
+  --hacker-border-focus: #00d2ff;
+  --hacker-accent: #00d2ff;
+  --hacker-secondary: #3b82f6;
+  --hacker-glow: rgba(0, 210, 255, 0.4);
+  --accent-1: #00d2ff;
+  --accent-2: #3b82f6;
+  --border: rgba(0, 210, 255, 0.3);
+  --border-hover: #00d2ff;
+}
+
+/* ☣ C2 COMMAND AMBER */
+[data-design="hacker"][data-theme="c2amber"] {
+  --hacker-bg: #0a0701;
+  --hacker-panel: rgba(18, 12, 3, 0.92);
+  --hacker-border: rgba(255, 176, 0, 0.3);
+  --hacker-border-focus: #ffb000;
+  --hacker-accent: #ffb000;
+  --hacker-secondary: #f59e0b;
+  --hacker-glow: rgba(255, 176, 0, 0.35);
+  --accent-1: #ffb000;
+  --accent-2: #f59e0b;
+  --border: rgba(255, 176, 0, 0.3);
+  --border-hover: #ffb000;
+}
+
+/* 👾 PURPLE TEAM FUSION */
+[data-design="hacker"][data-theme="purpleteam"] {
+  --hacker-bg: #080311;
+  --hacker-panel: rgba(15, 6, 26, 0.92);
+  --hacker-border: rgba(168, 85, 247, 0.3);
+  --hacker-border-focus: #a855f7;
+  --hacker-accent: #a855f7;
+  --hacker-secondary: #ec4899;
+  --hacker-glow: rgba(168, 85, 247, 0.35);
+  --accent-1: #a855f7;
+  --accent-2: #ec4899;
+  --border: rgba(168, 85, 247, 0.3);
+  --border-hover: #a855f7;
+}
+
+/* Global Hacker Body & CRT Scanlines */
+[data-design="hacker"] body {
+  background-color: var(--hacker-bg) !important;
+  color: var(--hacker-text) !important;
+  font-family: var(--hacker-font) !important;
+  background-image: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.015), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.015)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M60 0H0v60' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 100% 3px, 6px 100%, 60px 60px;
+  background-attachment: fixed;
+}
+
+/* Terminal Cyber Card Container */
+[data-design="hacker"] .hacker-card {
+  background: var(--hacker-panel);
+  border: 1px solid var(--hacker-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+[data-design="hacker"] .hacker-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hacker-accent), transparent);
+  opacity: 0.6;
+}
+
+[data-design="hacker"] .hacker-card:hover {
+  border-color: var(--hacker-border-focus);
+  box-shadow: 0 8px 30px var(--hacker-glow), inset 0 0 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Red Team / Cyber Tactical Buttons */
+[data-design="hacker"] .btn-hacker-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--hacker-accent);
+  color: #05070a;
+  font-family: var(--hacker-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.6rem;
+  border-radius: 2px;
+  border: 1px solid var(--hacker-accent);
+  box-shadow: 0 0 18px var(--hacker-glow);
+  transition: all 0.2s ease;
+}
+
+[data-design="hacker"] .btn-hacker-primary:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 0 28px var(--hacker-accent);
+  transform: scale(1.02);
+}
+
+[data-design="hacker"] .btn-hacker-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--hacker-accent);
+  font-family: var(--hacker-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.6rem;
+  border-radius: 2px;
+  border: 1px solid var(--hacker-border);
+  transition: all 0.2s ease;
+}
+
+[data-design="hacker"] .btn-hacker-secondary:hover {
+  border-color: var(--hacker-accent);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 15px var(--hacker-glow);
+}
+
+/* CRT Blinking Cursor */
+@keyframes hacker-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+[data-design="hacker"] .cursor-blink {
+  animation: hacker-blink 0.9s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BLOG ARTICLE CONTENT STYLING (Markdown rendering)
+═══════════════════════════════════════════════════════════════════ */
+.blog-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.blog-content h1 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+.blog-content h2 { font-size: clamp(1.4rem, 2.5vw, 1.85rem); }
+.blog-content h3 { font-size: 1.3rem; }
+
+.blog-content p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-content a {
+  color: var(--accent-1);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.blog-content a:hover {
+  filter: brightness(1.2);
+}
+
+.blog-content code:not(pre code) {
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent-1);
+  font-size: 0.88em;
+  font-family: var(--font-mono, monospace);
+}
+
+.blog-content pre {
+  margin: 1.6rem 0;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #f1f5f9;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.blog-content blockquote {
+  margin: 1.6rem 0;
+  padding: 1rem 1.4rem;
+  border-left: 4px solid var(--accent-1);
+  background: var(--bg-card);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content ol {
+  list-style-type: decimal;
+  padding-left: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.45rem;
+}
+
+.blog-content img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  margin: 1.8rem 0;
+  border: 1px solid var(--border);
+}
+
+

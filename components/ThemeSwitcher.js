@@ -42,34 +42,41 @@ export default function ThemeSwitcher() {
 
             {/* Panel */}
             {open && (
-                <div className="absolute right-0 top-12 z-[9999] rounded-[18px] bg-[var(--bg-primary)] backdrop-blur-2xl border border-[var(--border)] shadow-[0_16px_60px_rgba(0,0,0,0.3)] w-[272px] overflow-hidden">
+                <div className="absolute right-0 top-12 z-[9999] rounded-[22px] bg-[var(--bg-primary)] backdrop-blur-2xl border border-[var(--border)] shadow-[0_24px_80px_rgba(0,0,0,0.55)] w-[320px] max-h-[82vh] overflow-y-auto custom-scrollbar">
 
                     {/* ── Design System ── */}
                     <div className="p-4 border-b border-[var(--border)]">
-                        <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-text-muted mb-3">
-                            Design System
-                        </p>
-                        {/* 2×2 grid for 4 designs */}
-                        <div className="grid grid-cols-2 gap-2">
-                            {DESIGNS.map(({ id, label, desc }) => {
+                        <div className="flex items-center justify-between mb-3">
+                            <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-muted">
+                                Design System
+                            </p>
+                            <span className="text-[0.65rem] font-medium text-text-muted px-2 py-0.5 rounded-full bg-[var(--bg-secondary)] border border-[var(--border)]">
+                                {DESIGNS.length} Styles
+                            </span>
+                        </div>
+                        {/* Responsive grid for designs */}
+                        <div className="grid grid-cols-2 gap-2.5">
+                            {DESIGNS.map(({ id, label, desc, icon }) => {
                                 const isActive = design === id;
-                                // Show the first theme of each design for preview
                                 const previewTheme = DESIGN_THEMES[id]?.[0] || { accent: '#6366f1', secondary: '#06b6d4' };
                                 return (
                                     <button
                                         key={id}
                                         onClick={() => setDesign(id)}
-                                        className={`flex flex-col items-center gap-1.5 p-2.5 rounded-xl border transition-all duration-200 ${isActive
-                                            ? 'border-[var(--accent-1)] bg-[color-mix(in_srgb,var(--accent-1)_12%,transparent)]'
-                                            : 'border-[var(--border)] hover:border-[var(--accent-2)] hover:bg-[var(--bg-secondary)]'
+                                        className={`flex flex-col items-center gap-1.5 p-2.5 rounded-xl border transition-all duration-200 cursor-pointer ${isActive
+                                            ? 'border-[var(--accent-1)] bg-[color-mix(in_srgb,var(--accent-1)_14%,transparent)] shadow-md'
+                                            : 'border-[var(--border)] hover:border-[var(--accent-1)]/50 hover:bg-[var(--bg-secondary)]'
                                             }`}
-                                        style={isActive ? { borderColor: currentTheme.accent, boxShadow: `0 0 12px ${currentTheme.accent}44` } : {}}
+                                        style={isActive ? { borderColor: currentTheme.accent, boxShadow: `0 0 14px ${currentTheme.accent}44` } : {}}
                                     >
-                                        <DesignPreview id={id} accent={isActive ? currentTheme.accent : previewTheme.accent} secondary={isActive ? currentTheme.secondary : previewTheme.secondary} active={isActive} />
-                                        <span className={`text-[0.7rem] font-semibold leading-none ${isActive ? 'text-text-primary' : 'text-text-muted'}`}>
+                                        <div className="w-full flex justify-center py-0.5">
+                                            <DesignPreview id={id} accent={isActive ? currentTheme.accent : previewTheme.accent} secondary={isActive ? currentTheme.secondary : previewTheme.secondary} active={isActive} />
+                                        </div>
+                                        <span className={`text-[0.75rem] font-bold flex items-center gap-1 leading-none ${isActive ? 'text-text-primary' : 'text-text-secondary'}`}>
+                                            <span className="text-[0.75rem] opacity-75">{icon}</span>
                                             {label}
                                         </span>
-                                        <span className="text-[0.58rem] text-text-muted leading-none">{desc}</span>
+                                        <span className="text-[0.62rem] text-text-muted leading-tight text-center">{desc}</span>
                                     </button>
                                 );
                             })}
@@ -78,32 +85,37 @@ export default function ThemeSwitcher() {
 
                     {/* ── Colour Theme (filtered per design) ── */}
                     <div className="p-4">
-                        <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-text-muted mb-3">
-                            Colour
-                        </p>
-                        <div className="flex flex-col gap-1">
+                        <div className="flex items-center justify-between mb-3">
+                            <p className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-text-muted">
+                                Colour Palette
+                            </p>
+                            <span className="text-[0.65rem] font-medium text-text-muted">
+                                {availableThemes.length} Options
+                            </span>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
                             {availableThemes.map(({ id, label, accent, secondary }) => {
                                 const isActive = theme === id;
                                 return (
                                     <button
                                         key={id}
                                         onClick={() => { setTheme(id); setOpen(false); }}
-                                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-[10px] text-left transition-all duration-150 ${isActive ? 'bg-[var(--bg-secondary)]' : 'hover:bg-[var(--bg-secondary)]/50'
+                                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-xl text-left transition-all duration-150 cursor-pointer ${isActive ? 'bg-[var(--bg-secondary)] border border-[var(--border)] font-semibold' : 'hover:bg-[var(--bg-secondary)]/60 border border-transparent'
                                             }`}
                                     >
                                         <span
-                                            className="w-[18px] h-[18px] rounded-full flex-shrink-0 border-2"
+                                            className="w-[20px] h-[20px] rounded-full flex-shrink-0 border-2 transition-transform hover:scale-110"
                                             style={{
                                                 background: `linear-gradient(135deg, ${accent} 50%, ${secondary} 50%)`,
                                                 borderColor: isActive ? accent : 'var(--border)',
-                                                boxShadow: isActive ? `0 0 8px ${accent}88` : 'none',
+                                                boxShadow: isActive ? `0 0 10px ${accent}88` : 'none',
                                             }}
                                         />
-                                        <span className={`text-[0.8rem] font-medium ${isActive ? 'text-text-primary' : 'text-text-secondary'}`}>
+                                        <span className={`text-[0.82rem] ${isActive ? 'text-text-primary font-bold' : 'text-text-secondary'}`}>
                                             {label}
                                         </span>
                                         {isActive && (
-                                            <svg className="ml-auto w-3 h-3 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: accent }}>
+                                            <svg className="ml-auto w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ color: accent }}>
                                                 <path d="M20 6L9 17l-5-5" />
                                             </svg>
                                         )}
@@ -183,6 +195,16 @@ function DesignPreview({ id, accent, secondary, active }) {
                 <rect x="8" y="8" width="8" height="2" fill={`${a}55`} />
                 <rect x="8" y="13" width="12" height="1" fill={`${a}33`} />
                 <rect x="18" y="26" width="16" height="4" fill={a} opacity="0.8" />
+            </svg>
+        );
+    }
+    if (id === 'apple') {
+        return (
+            <svg width="52" height="36" viewBox="0 0 52 36" fill="none">
+                <rect x="1" y="1" width="50" height="34" rx="8" fill="rgba(0,0,0,0.6)" stroke={a} strokeWidth="1.2" />
+                <circle cx="26" cy="14" r="5" fill={a} opacity="0.8" />
+                <rect x="12" y="23" width="28" height="3" rx="1.5" fill="rgba(255,255,255,0.7)" />
+                <rect x="18" y="28" width="16" height="2" rx="1" fill={`${a}66`} />
             </svg>
         );
     }

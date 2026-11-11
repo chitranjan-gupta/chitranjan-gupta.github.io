@@ -5,19 +5,45 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "sync-blogs": "node scripts/sync-blogs.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:verify": "node scripts/verify-deploy.mjs",
+    "test": "npm run test:unit && npm run test:verify && npm run test:e2e"
   },
   "dependencies": {
+    "@fec/remark-a11y-emoji": "^4.0.2",
+    "@next/third-parties": "^16.4.6",
+    "@notionhq/client": "^5.31.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "codehike": "^1.1.0",
+    "marked": "^18.1.3",
     "next": "16.1.6",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@rollup/plugin-sucrase": "^5.1.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.9",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitejs/plugin-react-swc": "^4.3.3",
     "autoprefixer": "^10.4.27",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "jsdom": "^29.1.1",
     "postcss": "^8.5.8",
-    "tailwindcss": "^3.4.19"
+    "tailwindcss": "^3.4.19",
+    "vite-plugin-babel": "^1.7.3",
+    "vitest": "^5.1.0"
   }
 }
