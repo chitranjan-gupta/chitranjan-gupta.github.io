@@ -26,8 +26,23 @@ const anekDevanagari = Anek_Devanagari({
 });
 
 export const metadata = {
-  title: 'Chitranjan Gupta - Portfolio',
-  description: 'Chitranjan Gupta - Portfolio',
+  metadataBase: new URL('https://chitranjan.me'),
+  title: {
+    default: 'Chitranjan Kumar Gupta | Full-Stack & Security Engineer',
+    template: '%s | Chitranjan Kumar Gupta',
+  },
+  description: 'Portfolio, technical dispatches, and projects by Chitranjan Kumar Gupta — Full-Stack Engineer specializing in React, Next.js, and application security.',
+  alternates: {
+    canonical: 'https://chitranjan.me',
+  },
+  openGraph: {
+    title: 'Chitranjan Kumar Gupta | Portfolio',
+    description: 'Full-Stack Engineer, creator of ShikshaSetu, Freshmarks, and open-source tooling.',
+    url: 'https://chitranjan.me',
+    siteName: 'Chitranjan Gupta',
+    locale: 'en_US',
+    type: 'website',
+  },
   verification: GOOGLE_SEARCH_CONSOLE_ID ? { google: GOOGLE_SEARCH_CONSOLE_ID } : undefined,
 };
 

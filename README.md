@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chitranjan Kumar Gupta - Portfolio & Personal Website
 
-## Getting Started
+Personal engineering portfolio, technical blog, and software showcase built with Next.js 16 (App Router), React 19, Tailwind CSS, MDX with CodeHike, and fully automated testing (Vitest, Playwright, pre-deploy verification).
 
-First, run the development server:
+## 🚀 Features
+
+- **8 Multi-Design Systems**: Aurora (Glassmorphism), Tron (Cyberpunk), Warfare (Tactical COD), CyberSec (Red Team / Hacker), Indic (Heritage & Festivals), Cupertino (Apple UI), Modern (Minimalist), and Ares (Brutalist).
+- **Interactive Terminal & Matrix Rain**: Authentic retro katakana canvas streams with customizable palettes.
+- **Dynamic Blogs with Notion & MDX**: Synchronized markdown articles with CodeHike code highlighting and YouTube media embeds.
+- **Interactive Retro Snake Game**: Live arcade game embedded with dynamic design and theme shifting.
+- **Interactive Festival Celebrations**: Chhath Puja, Diwali fireworks, Holi gulal, Dussehra arrows, and Raksha Bandhan sparks with interactive canvas effects and festive audio player.
+- **Complete Test Pipeline**: Vitest unit tests, Playwright E2E browser tests, and zero-dependency static artifact verification.
+
+## 🛠️ Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to explore the portfolio.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧪 Testing & Quality Assurance
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Run complete test suite (Unit + Pre-Deploy Verify + E2E)
+npm test
 
-## Learn More
+# Run unit tests only (Vitest)
+npm run test:unit
 
-To learn more about Next.js, take a look at the following resources:
+# Run static HTML, sitemap & robots verification
+npm run test:verify
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run real browser E2E smoke tests (Playwright)
+npm run test:e2e
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run linter
+npm run lint
+```
 
-## Deploy on Vercel
+## 📦 Production Build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```

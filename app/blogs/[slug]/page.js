@@ -16,9 +16,22 @@ export async function generateMetadata({ params }) {
     const blog = blogsData.find((b) => b.slug === slug);
     if (!blog) return { title: 'Blog Not Found' };
 
+    const canonicalUrl = `https://chitranjan.me/blogs/${slug}`;
+
     return {
         title: `${blog.title} | Chitranjan Kumar Gupta`,
         description: blog.desc || 'Technical blog post by Chitranjan Kumar Gupta',
+        alternates: {
+            canonical: canonicalUrl,
+        },
+        openGraph: {
+            title: blog.title,
+            description: blog.desc,
+            url: canonicalUrl,
+            type: 'article',
+            publishedTime: blog.created,
+            authors: ['https://chitranjan.me'],
+        },
     };
 }
 
