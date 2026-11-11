@@ -322,7 +322,7 @@ function HeroIndic() {
                     {isFestival && (
                         <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl p-1 bg-gradient-to-tr from-[var(--indic-saffron)] via-[var(--indic-border)] to-[var(--indic-terracotta)] shadow-[0_8px_30px_rgba(255,153,51,0.3)] transition transform hover:scale-105">
                             <div className="w-full h-full rounded-[14px] overflow-hidden border border-[var(--indic-border)] bg-[var(--indic-bg)] flex items-center justify-center">
-                                <img
+                                <Image
                                     src={
                                         theme === 'diwali' ? '/assets/festivals/diwali.svg' :
                                         theme === 'holi' ? '/assets/festivals/holi.svg' :
@@ -332,6 +332,8 @@ function HeroIndic() {
                                         '/assets/festivals/diwali.svg'
                                     }
                                     alt={festivalData.greeting}
+                                    width={144}
+                                    height={144}
                                     className="w-full h-full object-cover"
                                 />
                             </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { useTheme } from '@/context/ThemeContext';
 
 /**
@@ -391,7 +392,7 @@ export default function IndicCrackers() {
                         <div className="flex items-center gap-2">
                             {/* Festival Artwork Thumbnail inside Player */}
                             <div className="w-8 h-8 rounded-lg overflow-hidden border border-[var(--indic-border)] shrink-0 bg-black/10">
-                                <img
+                                <Image
                                     src={
                                         theme === 'diwali' ? '/assets/festivals/diwali.svg' :
                                         theme === 'holi' ? '/assets/festivals/holi.svg' :
@@ -401,6 +402,8 @@ export default function IndicCrackers() {
                                         '/assets/festivals/dussehra.svg'
                                     }
                                     alt={song.title}
+                                    width={32}
+                                    height={32}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -439,7 +442,7 @@ export default function IndicCrackers() {
             <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[55] flex items-center gap-2 px-3.5 py-2 rounded-full bg-[rgba(255,249,240,0.95)] dark:bg-[rgba(13,6,20,0.95)] backdrop-blur-xl border border-[var(--indic-border,#D4AF37)] shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all text-xs font-serif">
                 {/* Festival photo artwork thumbnail */}
                 <div className="w-7 h-7 rounded-full overflow-hidden border-2 border-[var(--indic-border,#D4AF37)] flex-shrink-0 shadow-sm bg-black/10">
-                    <img
+                    <Image
                         src={
                             theme === 'diwali' ? '/assets/festivals/diwali.svg' :
                             theme === 'holi' ? '/assets/festivals/holi.svg' :
@@ -449,6 +452,8 @@ export default function IndicCrackers() {
                             '/assets/festivals/diwali.svg'
                         }
                         alt="Festival Icon"
+                        width={28}
+                        height={28}
                         className="w-full h-full object-cover"
                     />
                 </div>
